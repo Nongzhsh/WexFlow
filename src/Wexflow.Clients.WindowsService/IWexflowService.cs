@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.ServiceModel;
 using Wexflow.Core.Service.Contracts;
+using static Wexflow.Clients.WindowsService.WexflowService;
 
 namespace Wexflow.Clients.WindowsService
 {
@@ -11,7 +12,7 @@ namespace Wexflow.Clients.WindowsService
         WorkflowInfo[] GetWorkflows();
 
         [OperationContract]
-        void StartWorkflow(string id);
+        void StartWorkflow(string model, RequestModel aaa);
 
         [OperationContract]
         void StopWorkflow(string id);

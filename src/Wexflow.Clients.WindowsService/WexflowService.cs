@@ -10,7 +10,7 @@ using System.Xml.XPath;
 using Newtonsoft.Json.Linq;
 using Wexflow.Core.ExecutionGraph.Flowchart;
 using LaunchType = Wexflow.Core.Service.Contracts.LaunchType;
-using System.Xml;
+using Newtonsoft.Json;
 
 namespace Wexflow.Clients.WindowsService
 {
@@ -23,17 +23,31 @@ namespace Wexflow.Clients.WindowsService
         public WorkflowInfo[] GetWorkflows()
         {
             return WexflowWindowsService.WexflowEngine.Workflows.Select(wf => new WorkflowInfo(wf.Id, wf.Name,
-                    (LaunchType) wf.LaunchType, wf.IsEnabled, wf.Description, wf.IsRunning, wf.IsPaused,
+                    (LaunchType)wf.LaunchType, wf.IsEnabled, wf.Description, wf.IsRunning, wf.IsPaused,
                     wf.Period.ToString(@"dd\.hh\:mm\:ss"), wf.WorkflowFilePath, wf.IsExecutionGraphEmpty))
                 .ToArray();
         }
 
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "start/{id}")]
-        public void StartWorkflow(string id)
+            UriTemplate = "start/{model}")]
+        public void StartWorkflow(string model,RequestModel aaa)
         {
-            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(id));
+            var result = JsonConvert.DeserializeObject<RequestModel>(model);
+            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(result.Id));
+        }
+
+        //[WebInvoke(Method = "POST",
+        //ResponseFormat = WebMessageFormat.Json,
+        //UriTemplate = "start")]
+        //public void StartWorkflow(RequestModel model)
+        //{
+        //    WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(model.Id));
+        //}
+
+        public class RequestModel
+        {
+            public string Id { get; set; }
         }
 
         [WebInvoke(Method = "POST",
@@ -68,8 +82,8 @@ namespace Wexflow.Clients.WindowsService
             var wf = WexflowWindowsService.WexflowEngine.GetWorkflow(int.Parse(id));
             if (wf != null)
             {
-                return new WorkflowInfo(wf.Id, wf.Name, (LaunchType) wf.LaunchType, wf.IsEnabled, wf.Description,
-                    wf.IsRunning, wf.IsPaused, wf.Period.ToString(@"dd\.hh\:mm\:ss") , wf.WorkflowFilePath, wf.IsExecutionGraphEmpty);
+                return new WorkflowInfo(wf.Id, wf.Name, (LaunchType)wf.LaunchType, wf.IsEnabled, wf.Description,
+                    wf.IsRunning, wf.IsPaused, wf.Period.ToString(@"dd\.hh\:mm\:ss"), wf.WorkflowFilePath, wf.IsExecutionGraphEmpty);
             }
 
             return null;
@@ -215,12 +229,12 @@ namespace Wexflow.Clients.WindowsService
                 JObject o = JObject.Parse(json);
                 var wi = o.SelectToken("WorkflowInfo");
 
-                var isNew = (bool) wi.SelectToken("IsNew");
+                var isNew = (bool)wi.SelectToken("IsNew");
                 if (isNew)
                 {
                     XNamespace xn = "urn:wexflow-schema";
                     var xdoc = new XDocument();
-                 
+
                     int workflowId = (int)wi.SelectToken("Id");
                     string workflowName = (string)wi.SelectToken("Name");
                     LaunchType workflowLaunchType = (LaunchType)((int)wi.SelectToken("LaunchType"));
@@ -308,7 +322,7 @@ namespace Wexflow.Clients.WindowsService
 
                     xdoc.Add(xwf);
 
-                    var path = (string) wi.SelectToken("Path");
+                    var path = (string)wi.SelectToken("Path");
                     xdoc.Save(path);
                 }
                 else
@@ -319,13 +333,13 @@ namespace Wexflow.Clients.WindowsService
                     {
                         var xdoc = wf.XDoc;
 
-                        int workflowId = (int) wi.SelectToken("Id");
-                        string workflowName = (string) wi.SelectToken("Name");
-                        LaunchType workflowLaunchType = (LaunchType) ((int) wi.SelectToken("LaunchType"));
-                        string p = (string) wi.SelectToken("Period");
+                        int workflowId = (int)wi.SelectToken("Id");
+                        string workflowName = (string)wi.SelectToken("Name");
+                        LaunchType workflowLaunchType = (LaunchType)((int)wi.SelectToken("LaunchType"));
+                        string p = (string)wi.SelectToken("Period");
                         TimeSpan workflowPeriod = TimeSpan.Parse(string.IsNullOrEmpty(p) ? "00.00:00:00" : p);
-                        bool isWorkflowEnabled = (bool) wi.SelectToken("IsEnabled");
-                        string workflowDesc = (string) wi.SelectToken("Description");
+                        bool isWorkflowEnabled = (bool)wi.SelectToken("IsEnabled");
+                        string workflowDesc = (string)wi.SelectToken("Description");
 
                         //if(xdoc.Root == null) throw new Exception("Root is null");
                         xdoc.Root.Attribute("id").Value = workflowId.ToString();
@@ -362,10 +376,10 @@ namespace Wexflow.Clients.WindowsService
                         var tasks = o.SelectToken("Tasks");
                         foreach (var task in tasks)
                         {
-                            int taskId = (int) task.SelectToken("Id");
-                            string taskName = (string) task.SelectToken("Name");
-                            string taskDesc = (string) task.SelectToken("Description");
-                            bool isTaskEnabled = (bool) task.SelectToken("IsEnabled");
+                            int taskId = (int)task.SelectToken("Id");
+                            string taskName = (string)task.SelectToken("Name");
+                            string taskDesc = (string)task.SelectToken("Description");
+                            bool isTaskEnabled = (bool)task.SelectToken("IsEnabled");
 
                             var xtask = new XElement(wf.XNamespaceWf + "Task"
                                 , new XAttribute("id", taskId)
@@ -377,8 +391,8 @@ namespace Wexflow.Clients.WindowsService
                             var settings = task.SelectToken("Settings");
                             foreach (var setting in settings)
                             {
-                                string settingName = (string) setting.SelectToken("Name");
-                                string settingValue = (string) setting.SelectToken("Value");
+                                string settingName = (string)setting.SelectToken("Name");
+                                string settingValue = (string)setting.SelectToken("Value");
 
                                 var xsetting = new XElement(wf.XNamespaceWf + "Setting"
                                     , new XAttribute("name", settingName)
@@ -399,8 +413,8 @@ namespace Wexflow.Clients.WindowsService
                                 var attributes = setting.SelectToken("Attributes");
                                 foreach (var attribute in attributes)
                                 {
-                                    string attributeName = (string) attribute.SelectToken("Name");
-                                    string attributeValue = (string) attribute.SelectToken("Value");
+                                    string attributeName = (string)attribute.SelectToken("Name");
+                                    string attributeValue = (string)attribute.SelectToken("Value");
                                     xsetting.SetAttributeValue(attributeName, attributeValue);
                                 }
 
@@ -486,7 +500,7 @@ namespace Wexflow.Clients.WindowsService
         {
             JObject o = JObject.Parse(File.ReadAllText(WexflowWindowsService.WexflowEngine.TasksSettingsFile));
             var token = o.SelectToken(taskName);
-            return token != null ? token.ToObject<string[]>().OrderBy(x => x).ToArray() : new string[]{};
+            return token != null ? token.ToObject<string[]>().OrderBy(x => x).ToArray() : new string[] { };
         }
 
         [WebInvoke(Method = "GET",
@@ -498,7 +512,7 @@ namespace Wexflow.Clients.WindowsService
             if (wf != null)
             {
                 IList<Node> nodes = new List<Node>();
-                
+
                 foreach (var node in wf.ExecutionGraph.Nodes)
                 {
                     var task = wf.Taks.FirstOrDefault(t => t.Id == node.Id);
