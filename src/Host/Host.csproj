@@ -21,7 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Contract\Contract.csproj" />
     <ProjectReference Include="..\Wexflow.Core\Wexflow.Core.csproj" />
-    <ProjectReference Include="..\Wexflow.Tasks.Movedir\Wexflow.Tasks.Movedir.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using System.IO;
 using System.Threading;
+using Contract;
 
 namespace Wexflow.Core
 {
@@ -281,6 +282,20 @@ namespace Wexflow.Core
             if (wf == null)
             {
                 Logger.ErrorFormat("Workflow {0} not found.", workflowId);
+            }
+            else
+            {
+                if (wf.IsEnabled) wf.Start();
+            }
+        }
+
+        public void StartWorkflowModel(RequestModel model)
+        {
+            var wf = GetWorkflow(model.Id);
+
+            if (wf == null)
+            {
+                Logger.ErrorFormat("Workflow {0} not found.", model.Id);
             }
             else
             {

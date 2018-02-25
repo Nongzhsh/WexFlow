@@ -9,7 +9,7 @@ namespace Host.Controllers
         [HttpPost]
         public void Start ([FromBody]RequestModel model)
         {
-            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(model.Id));
+            WexflowWindowsService.WexflowEngine.StartWorkflowModel(model);
         }
     }
 }

@@ -107,6 +107,12 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contract\Contract.csproj">
+      <Project>{829c4d92-369e-4be9-bc44-31bd098c2615}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.-->

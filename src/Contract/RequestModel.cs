@@ -6,6 +6,6 @@ namespace Contract
 {
     public class RequestModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
     }
 }
