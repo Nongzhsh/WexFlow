@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using Wexflow.Core.ExecutionGraph.Flowchart;
 using LaunchType = Wexflow.Core.Service.Contracts.LaunchType;
 using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace Wexflow.Clients.WindowsService
 {
@@ -30,24 +31,11 @@ namespace Wexflow.Clients.WindowsService
 
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "start/{model}")]
-        public void StartWorkflow(string model,RequestModel aaa)
+            UriTemplate = "start")]
+        public void StartWorkflow(RequestModel aaa)
         {
-            var result = JsonConvert.DeserializeObject<RequestModel>(model);
-            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(result.Id));
-        }
-
-        //[WebInvoke(Method = "POST",
-        //ResponseFormat = WebMessageFormat.Json,
-        //UriTemplate = "start")]
-        //public void StartWorkflow(RequestModel model)
-        //{
-        //    WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(model.Id));
-        //}
-
-        public class RequestModel
-        {
-            public string Id { get; set; }
+            // var result = JsonConvert.DeserializeObject<RequestModel>(model);
+            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(aaa.Id));
         }
 
         [WebInvoke(Method = "POST",
@@ -542,5 +530,12 @@ namespace Wexflow.Clients.WindowsService
 
             return null;
         }
+    }
+
+    [DataContract]
+    public class RequestModel
+    {
+        [DataMember]
+        public string Id { get; set; }
     }
 }
