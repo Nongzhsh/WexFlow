@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Wexflow.Tasks.MyTask\Wexflow.Tasks.MyTask.csproj" />
     <ProjectReference Include="..\Contract\Contract.csproj" />
     <ProjectReference Include="..\Wexflow.Core\Wexflow.Core.csproj" />
   </ItemGroup>

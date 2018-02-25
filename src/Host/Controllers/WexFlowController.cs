@@ -1,5 +1,6 @@
 ﻿using Contract;
 using Microsoft.AspNetCore.Mvc;
+using Wexflow.Tasks.MyTask;
 
 namespace Host.Controllers
 {
@@ -9,6 +10,7 @@ namespace Host.Controllers
         [HttpPost]
         public void Start ([FromBody]RequestModel model)
         {
+            //new MyTask().Run();
             WexflowWindowsService.WexflowEngine.StartWorkflowModel(model);
         }
     }

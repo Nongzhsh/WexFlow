@@ -1,0 +1,3 @@
+<Task id="$int" name="MyTask" description="My task description" enabled="true">
+    <Setting name="settingName" value="settingValue" />
+</Task>

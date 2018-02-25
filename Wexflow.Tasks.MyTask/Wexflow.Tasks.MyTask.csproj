@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Program Files (x86)\Wexflow\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Wexflow.Core">
+      <HintPath>..\..\..\Program Files (x86)\Wexflow\Wexflow.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

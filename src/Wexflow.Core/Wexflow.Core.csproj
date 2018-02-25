@@ -108,6 +108,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Wexflow.Tasks.MyTask\Wexflow.Tasks.MyTask.csproj">
+      <Project>{a96e6545-555f-4ee4-ba3e-7d8038513548}</Project>
+      <Name>Wexflow.Tasks.MyTask</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Contract\Contract.csproj">
       <Project>{829c4d92-369e-4be9-bc44-31bd098c2615}</Project>
       <Name>Contract</Name>
