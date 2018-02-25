@@ -10,7 +10,6 @@ using System.Xml.XPath;
 using Newtonsoft.Json.Linq;
 using Wexflow.Core.ExecutionGraph.Flowchart;
 using LaunchType = Wexflow.Core.Service.Contracts.LaunchType;
-using Newtonsoft.Json;
 using System.Runtime.Serialization;
 
 namespace Wexflow.Clients.WindowsService
@@ -35,7 +34,7 @@ namespace Wexflow.Clients.WindowsService
         public void StartWorkflow(RequestModel aaa)
         {
             // var result = JsonConvert.DeserializeObject<RequestModel>(model);
-            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(aaa.Id));
+            WexflowWindowsService.WexflowEngine.StartWorkflow(2);
         }
 
         [WebInvoke(Method = "POST",
