@@ -24,4 +24,16 @@
     <ProjectReference Include="..\Wexflow.Core\Wexflow.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DataModel">
+      <HintPath>..\..\DataModel\bin\Debug\DataModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -6,35 +6,33 @@ using System.Net.Http;
 using System.Threading;
 using System.Xml.Linq;
 using Wexflow.Core;
+using System.Data.SqlClient;
+using DataModel;
 
 namespace Wexflow.Tasks.MyTask
 {
 
-    public class MyTask: Task
+    public class MyTask : Task
     {
 
         public MyTask(XElement xe, Workflow wf) : base(xe, wf)
         {
-            string settingValue = this.GetSetting("selectEntities");
+            string settingValue = this.GetSetting("UserId");
         }
 
         public override TaskStatus Run(RequestModel model)
         {
-            try
+            if (model == null)
             {
-                string fileName = @"C:\MyLog.txt";
-                if (!File.Exists(fileName))
-                {
-                    File.Create(fileName);
-                }
-                var text = model != null ? model.Name : "arash";
-                File.AppendAllText(fileName, text + Environment.NewLine);
+                model = new RequestModel { Name = "asghar" };
+            }
+            var modelProvider = new ModelProvider();
+
+            if (modelProvider.AddEmployee(new Emplo { Name = model.Name }))
+            {
                 return new TaskStatus(Status.Success);
             }
-            catch (ThreadAbortException)
-            {
-                throw;
-            }
+            return new TaskStatus(Status.Error);
         }
     }
 }
