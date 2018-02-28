@@ -1,6 +1,6 @@
 ﻿using Contract;
 using Microsoft.AspNetCore.Mvc;
-using Wexflow.Tasks.MyTask;
+using Newtonsoft.Json;
 
 namespace Host.Controllers
 {
@@ -8,10 +8,15 @@ namespace Host.Controllers
     public class WexFlowController : Controller
     {
         [HttpPost]
-        public void Start ([FromBody]RequestModel model)
+        public void Start([FromBody]RequestModel model)
         {
-            //new MyTask().Run();
             WexflowWindowsService.WexflowEngine.StartWorkflowModel(model);
+        }
+
+        [HttpPost]
+        public void Stop([FromBody]RequestModel model)
+        {
+            WexflowWindowsService.WexflowEngine.StopWorkflowModel(model);
         }
     }
 }

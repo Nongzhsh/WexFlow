@@ -299,7 +299,7 @@ namespace Wexflow.Core
             }
             else
             {
-                if (wf.IsEnabled) wf.Start();
+                if (wf.IsEnabled) wf.Start(model);
             }
         }
 
@@ -314,6 +314,20 @@ namespace Wexflow.Core
             if (wf == null)
             {
                 Logger.ErrorFormat("Workflow {0} not found.", workflowId);
+            }
+            else
+            {
+                if (wf.IsEnabled) wf.Stop();
+            }
+        }
+
+        public void StopWorkflowModel(RequestModel model)
+        {
+            var wf = GetWorkflow(model.Id);
+
+            if (wf == null)
+            {
+                Logger.ErrorFormat("Workflow {0} not found.", model.Id);
             }
             else
             {

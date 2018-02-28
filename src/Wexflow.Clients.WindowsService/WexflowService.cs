@@ -30,11 +30,10 @@ namespace Wexflow.Clients.WindowsService
 
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
-            UriTemplate = "start")]
-        public void StartWorkflow(RequestModel aaa)
+            UriTemplate = "start/{id}")]
+        public void StartWorkflow(string id)
         {
-            // var result = JsonConvert.DeserializeObject<RequestModel>(model);
-            WexflowWindowsService.WexflowEngine.StartWorkflow(2);
+            WexflowWindowsService.WexflowEngine.StartWorkflow(int.Parse(id));
         }
 
         [WebInvoke(Method = "POST",

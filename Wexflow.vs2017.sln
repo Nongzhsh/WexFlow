@@ -129,7 +129,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "src\Host\Host.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contract", "src\Contract\Contract.csproj", "{829C4D92-369E-4BE9-BC44-31BD098C2615}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wexflow.Tasks.MyTask", "Wexflow.Tasks.MyTask\Wexflow.Tasks.MyTask.csproj", "{A96E6545-555F-4EE4-BA3E-7D8038513548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wexflow.Tasks.MyTask", "Wexflow.Tasks.MyTask\Wexflow.Tasks.MyTask.csproj", "{A96E6545-555F-4EE4-BA3E-7D8038513548}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

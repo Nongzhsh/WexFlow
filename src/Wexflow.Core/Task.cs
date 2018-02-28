@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contract;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -124,8 +125,7 @@ namespace Wexflow.Core
         /// Starts the task.
         /// </summary>
         /// <returns>Task status.</returns>
-        public abstract TaskStatus Run();
-
+        public abstract TaskStatus Run(RequestModel model = null);
         /// <summary>
         /// Returns a setting value from its name.
         /// </summary>

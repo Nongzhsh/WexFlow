@@ -12,7 +12,7 @@ namespace Wexflow.Clients.WindowsService
         WorkflowInfo[] GetWorkflows();
 
         [OperationContract]
-        void StartWorkflow(RequestModel aaa);
+        void StartWorkflow(string id);
 
         [OperationContract]
         void StopWorkflow(string id);

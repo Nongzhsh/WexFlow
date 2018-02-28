@@ -5,11 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\src\Contract\Contract.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="log4net">
       <HintPath>..\..\..\Program Files (x86)\Wexflow\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="Wexflow.Core">
-      <HintPath>..\..\..\Program Files (x86)\Wexflow\Wexflow.Core.dll</HintPath>
+      <HintPath>..\src\Wexflow.Core\bin\x86\Debug\Wexflow.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 

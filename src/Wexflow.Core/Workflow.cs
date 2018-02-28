@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contract;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -524,7 +525,7 @@ namespace Wexflow.Core
         /// <summary>
         /// Starts this workflow.
         /// </summary>
-        public void Start()
+        public void Start(RequestModel model = null)
         {
             if (IsRunning) return;
 
@@ -544,11 +545,11 @@ namespace Wexflow.Core
                             bool success = true;
                             bool warning = false;
                             bool error = false;
-                            RunSequentialTasks(Taks, ref success, ref warning, ref error);
+                            RunSequentialTasks(Taks, ref success, ref warning, ref error, model);
                         }
                         else
                         {
-                            var status = RunTasks(ExecutionGraph.Nodes, Taks);
+                            var status = RunTasks(ExecutionGraph.Nodes, Taks, model);
 
                             switch (status)
                             {
@@ -657,7 +658,7 @@ namespace Wexflow.Core
             return tasks.ToArray();
         }
 
-        Status RunTasks(Node[] nodes, Task[] tasks)
+        Status RunTasks(Node[] nodes, Task[] tasks, RequestModel model = null)
         {
             var success = true;
             var warning = false;
@@ -700,12 +701,12 @@ namespace Wexflow.Core
             return Status.Error;
         }
 
-        private static void RunSequentialTasks(IEnumerable<Task> tasks, ref bool success, ref bool warning, ref bool atLeastOneSucceed)
+        private static void RunSequentialTasks(IEnumerable<Task> tasks, ref bool success, ref bool warning, ref bool atLeastOneSucceed, RequestModel model = null)
         {
             foreach (var task in tasks)
             {
                 if (!task.IsEnabled) continue;
-                var status = task.Run();
+                var status = task.Run(model);
                 success &= status.Status == Status.Success;
                 warning |= status.Status == Status.Warning;
                 if (!atLeastOneSucceed && status.Status == Status.Success) atLeastOneSucceed = true;
