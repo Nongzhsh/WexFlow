@@ -1,23 +1,15 @@
 ﻿using Contract;
-using Newtonsoft.Json;
-using System;
-using System.IO;
-using System.Net.Http;
-using System.Threading;
+using DataModel;
 using System.Xml.Linq;
 using Wexflow.Core;
-using System.Data.SqlClient;
-using DataModel;
 
-namespace Wexflow.Tasks.MyTask
+namespace Wexflow.Tasks.AddEmploy
 {
-
-    public class MyTask : Task
+    public class AddEmploy: Task
     {
-
-        public MyTask(XElement xe, Workflow wf) : base(xe, wf)
+        public AddEmploy(XElement xe, Workflow wf) : base(xe, wf)
         {
-            string settingValue = this.GetSetting("UserId");
+            //string settingValue = this.GetSetting("UserId");
         }
 
         public override TaskStatus Run(RequestModel model)
