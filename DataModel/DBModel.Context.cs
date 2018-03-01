@@ -15,15 +15,17 @@ namespace DataModel
 
     public partial class WorkFlowEntities : DbContext
     {
-        public WorkFlowEntities()
-        : base("name=WorkFlowEntities")
+        public WorkFlowEntities(string connectionString)
+        //: base("WorkFlowEntities")
+        //: base(connectionString)
         {
+            this.Database.Connection.ConnectionString = connectionString;
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    throw new UnintentionalCodeFirstException();
+        //}
 
         public DbSet<Emplo> Emploes { get; set; }
     }

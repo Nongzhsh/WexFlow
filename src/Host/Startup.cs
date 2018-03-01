@@ -26,7 +26,7 @@ namespace Host
         {
             services.AddMvc();
             var ttt = Configuration.GetConnectionString("WorkFlowEntities");
-            ConfigHelper.ConnectionString = ttt;
+            
         } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

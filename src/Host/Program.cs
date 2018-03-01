@@ -12,18 +12,6 @@ namespace Host
     {
         public static void Main(string[] args)
         {
-            //var pathToExe = Process.GetCurrentProcess().MainModule.FileName;
-            //var pathToContentRoot = Path.GetDirectoryName(pathToExe);
-
-            //var host = WebHost.CreateDefaultBuilder(args)
-            //    .UseContentRoot(pathToContentRoot)
-            //    .UseStartup<Startup>()
-            //    // .UseApplicationInsights()
-            //    .Build();
-
-            //host.RunAsService();
-            // BuildWebHost(args).Run();
-
             var servicesToRun = new ServiceBase[]
             {
                 new WexflowWindowsService(null)
