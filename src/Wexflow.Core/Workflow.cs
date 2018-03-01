@@ -558,21 +558,21 @@ namespace Wexflow.Core
                                     if (ExecutionGraph.OnSuccess != null)
                                     {
                                         var successTasks = NodesToTasks(ExecutionGraph.OnSuccess.Nodes);
-                                        RunTasks(ExecutionGraph.OnSuccess.Nodes, successTasks);
+                                        RunTasks(ExecutionGraph.OnSuccess.Nodes, successTasks, model);
                                     }
                                     break;
                                 case Status.Warning:
                                     if (ExecutionGraph.OnWarning != null)
                                     {
                                         var warningTasks = NodesToTasks(ExecutionGraph.OnWarning.Nodes);
-                                        RunTasks(ExecutionGraph.OnWarning.Nodes, warningTasks);
+                                        RunTasks(ExecutionGraph.OnWarning.Nodes, warningTasks, model);
                                     }
                                     break;
                                 case Status.Error:
                                     if (ExecutionGraph.OnError != null)
                                     {
                                         var errorTasks = NodesToTasks(ExecutionGraph.OnError.Nodes);
-                                        RunTasks(ExecutionGraph.OnError.Nodes, errorTasks);
+                                        RunTasks(ExecutionGraph.OnError.Nodes, errorTasks, model);
                                     }
                                     break;
                             }
@@ -684,7 +684,7 @@ namespace Wexflow.Core
                 {
                     if (startNode.ParentId == StartId)
                     {
-                        RunTasks(tasks, nodes, startNode, ref success, ref warning, ref atLeastOneSucceed);
+                        RunTasks(tasks, nodes, startNode, ref success, ref warning, ref atLeastOneSucceed, model);
                     }
                 }
             }
@@ -714,7 +714,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunTasks(Task[] tasks, Node[] nodes, Node node, ref bool success, ref bool warning, ref bool atLeastOneSucceed)
+        void RunTasks(Task[] tasks, Node[] nodes, Node node, ref bool success, ref bool warning, ref bool atLeastOneSucceed,RequestModel model = null)
         {
             if (node != null)
             {
@@ -744,7 +744,7 @@ namespace Wexflow.Core
                     {
                         if (task.IsEnabled)
                         {
-                            var status = task.Run();
+                            var status = task.Run(model);
 
                             success &= status.Status == Status.Success;
                             warning |= status.Status == Status.Warning;
@@ -758,7 +758,7 @@ namespace Wexflow.Core
                                 if (if1 != null)
                                 {
                                     var @if = if1;
-                                    RunIf(tasks, nodes, @if, ref success, ref warning, ref atLeastOneSucceed);
+                                    RunIf(tasks, nodes, @if, ref success, ref warning, ref atLeastOneSucceed,model);
                                 }
                                 else if (childNode is While)
                                 {
@@ -804,7 +804,7 @@ namespace Wexflow.Core
                                             }
                                             else
                                             {
-                                                RunTasks(tasks, nodes, ccNode, ref success, ref warning, ref atLeastOneSucceed);
+                                                RunTasks(tasks, nodes, ccNode, ref success, ref warning, ref atLeastOneSucceed, model);
                                             }
                                         }
                                     }
@@ -824,7 +824,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunIf(Task[] tasks, Node[] nodes, If @if, ref bool success, ref bool warning, ref bool atLeastOneSucceed)
+        void RunIf(Task[] tasks, Node[] nodes, If @if, ref bool success, ref bool warning, ref bool atLeastOneSucceed,RequestModel model = null)
         {
             var ifTask = GetTask(@if.IfId);
 
@@ -832,7 +832,7 @@ namespace Wexflow.Core
             {
                 if (ifTask.IsEnabled)
                 {
-                    var status = ifTask.Run();
+                    var status = ifTask.Run(model);
 
                     success &= status.Status == Status.Success;
                     warning |= status.Status == Status.Warning;
@@ -850,7 +850,7 @@ namespace Wexflow.Core
 
                             if (doIfStartNode.ParentId == StartId)
                             {
-                                RunTasks(doIfTasks, @if.DoNodes, doIfStartNode, ref success, ref warning, ref atLeastOneSucceed);
+                                RunTasks(doIfTasks, @if.DoNodes, doIfStartNode, ref success, ref warning, ref atLeastOneSucceed, model);
                             }
                         }
                     }
@@ -864,7 +864,7 @@ namespace Wexflow.Core
                             // Run Tasks
                             var elseStartNode = GetStartupNode(@if.ElseNodes);
 
-                            RunTasks(elseTasks, @if.ElseNodes, elseStartNode, ref success, ref warning, ref atLeastOneSucceed);
+                            RunTasks(elseTasks, @if.ElseNodes, elseStartNode, ref success, ref warning, ref atLeastOneSucceed,model);
                         }
                     }
 
@@ -873,7 +873,7 @@ namespace Wexflow.Core
 
                     if (childNode != null)
                     {
-                        RunTasks(tasks, nodes, childNode, ref success, ref warning, ref atLeastOneSucceed);
+                        RunTasks(tasks, nodes, childNode, ref success, ref warning, ref atLeastOneSucceed, model);
                     }
                 }
             }
@@ -883,7 +883,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunWhile(Task[] tasks, Node[] nodes, While @while, ref bool success, ref bool warning, ref bool atLeastOneSucceed)
+        void RunWhile(Task[] tasks, Node[] nodes, While @while, ref bool success, ref bool warning, ref bool atLeastOneSucceed,RequestModel model = null)
         {
             var whileTask = GetTask(@while.WhileId);
 
@@ -909,7 +909,7 @@ namespace Wexflow.Core
                                 // Run Tasks
                                 var doWhileStartNode = GetStartupNode(@while.Nodes);
 
-                                RunTasks(doWhileTasks, @while.Nodes, doWhileStartNode, ref success, ref warning, ref atLeastOneSucceed);
+                                RunTasks(doWhileTasks, @while.Nodes, doWhileStartNode, ref success, ref warning, ref atLeastOneSucceed, model);
                             }
                         }
                         else if (status.Condition == false)
@@ -933,7 +933,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunSwitch(Task[] tasks, Node[] nodes, Switch @switch, ref bool success, ref bool warning, ref bool atLeastOneSucceed)
+        void RunSwitch(Task[] tasks, Node[] nodes, Switch @switch, ref bool success, ref bool warning, ref bool atLeastOneSucceed, RequestModel model = null)
         {
             var switchTask = GetTask(@switch.SwitchId);
 

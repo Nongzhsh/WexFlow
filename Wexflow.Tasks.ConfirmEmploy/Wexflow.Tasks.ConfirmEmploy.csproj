@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{D7D4D6D4-9DA1-4BE4-8CC7-F94D91A2D77C}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\src\Contract\Contract.csproj">
       <Project>{829C4D92-369E-4BE9-BC44-31BD098C2615}</Project>
       <Name>Contract</Name>

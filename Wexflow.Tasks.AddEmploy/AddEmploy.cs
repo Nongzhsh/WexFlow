@@ -5,11 +5,12 @@ using Wexflow.Core;
 
 namespace Wexflow.Tasks.AddEmploy
 {
-    public class AddEmploy: Task
+    public class AddEmploy : Task
     {
+        public static string _adminId;
         public AddEmploy(XElement xe, Workflow wf) : base(xe, wf)
         {
-            //string settingValue = this.GetSetting("UserId");
+            _adminId = this.GetSetting("UserId");
         }
 
         public override TaskStatus Run(RequestModel model)
@@ -20,8 +21,16 @@ namespace Wexflow.Tasks.AddEmploy
             }
             var modelProvider = new ModelProvider();
 
-            if (modelProvider.AddEmployee(new Emplo { Name = model.Name }))
+            var addEmploy = modelProvider.AddEmployee(
+                new Emplo
+                {
+                    Name = model.Name,
+                    AdminId = int.Parse(_adminId),
+                    Status = "waiting"
+                });
+            if (addEmploy.Success)
             {
+                model.EmpId = addEmploy.Id;
                 return new TaskStatus(Status.Success);
             }
             return new TaskStatus(Status.Error);
