@@ -76,9 +76,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Wexflow.Tasks.ConfirmEmploy\Wexflow.Tasks.ConfirmEmploy.csproj">
+      <Project>{250eca88-102a-4341-b6df-1696b91914fa}</Project>
+      <Name>Wexflow.Tasks.ConfirmEmploy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.MyTask\Wexflow.Tasks.MyTask.csproj">
       <Project>{a96e6545-555f-4ee4-ba3e-7d8038513548}</Project>
-      <Name>Wexflow.Tasks.MyTask</Name>
+      <Name>Wexflow.Tasks.AddEmploy</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wexflow.Core.Service.Contracts\Wexflow.Core.Service.Contracts.csproj">
       <Project>{7debd0d9-ea9b-445c-9b6d-f426908ce736}</Project>

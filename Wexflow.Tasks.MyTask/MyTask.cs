@@ -24,7 +24,7 @@ namespace Wexflow.Tasks.MyTask
         {
             if (model == null)
             {
-                model = new RequestModel { Name = "asghar" };
+                model = new RequestModel { Name = "Null Input Value" };
             }
             var modelProvider = new ModelProvider();
 

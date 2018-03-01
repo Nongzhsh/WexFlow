@@ -201,6 +201,7 @@ namespace Wexflow.Core
                 }
                 // Loading tasks
                 var tasks = new List<Task>();
+                var tasksList = xdoc.XPathSelectElements("/wf:Workflow/wf:Tasks/wf:Task", XmlNamespaceManager);
                 foreach (var xTask in xdoc.XPathSelectElements("/wf:Workflow/wf:Tasks/wf:Task", XmlNamespaceManager))
                 {
                     var xAttribute = xTask.Attribute("name");
