@@ -6,9 +6,9 @@ namespace Contract
 {
     public class RequestModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int WorkflowId { get; set; }
         public int UserId { get; set; }
+        public string Name { get; set; }
         public int EmpId { get; set; }
     }
 }
