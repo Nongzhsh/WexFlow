@@ -25,11 +25,12 @@ namespace Wexflow.Tasks.BankConfirm
             {
                 if (serviceResult)
                 {
-                    // TODO SEND USERID
+                    // CheckConditions
                     return new TaskStatus(Status.Success);
                 }
                 else
                 {
+                    // فراخوانی سرویس لغو درخواست
                     return new TaskStatus(Status.Error);
                 }
                 Thread.Sleep(_interval);

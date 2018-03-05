@@ -76,6 +76,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\tests\Wexflow.Tasks.Tests\Wexflow.Tasks.Tests.csproj">
+      <Project>{2a378a60-ac8d-45b3-a14d-8885fde24410}</Project>
+      <Name>Wexflow.Tasks.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.AddEmploy\Wexflow.Tasks.AddEmploy.csproj">
       <Project>{6a7239b4-6275-49c8-9008-81e340047850}</Project>
       <Name>Wexflow.Tasks.AddEmploy</Name>
@@ -88,17 +92,41 @@
       <Project>{27634e09-9209-4cd8-a915-3671d89ad7f1}</Project>
       <Name>Wexflow.Tasks.CheckConditions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.CheckForBeingNewMarketing\Wexflow.Tasks.CheckForBeingNewMarketing.csproj">
+      <Project>{04bea968-d7db-40f4-9898-a930e3b8b70c}</Project>
+      <Name>Wexflow.Tasks.CheckForBeingNewMarketing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.ConfirmEmploy\Wexflow.Tasks.ConfirmEmploy.csproj">
       <Project>{250eca88-102a-4341-b6df-1696b91914fa}</Project>
       <Name>Wexflow.Tasks.ConfirmEmploy</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Wexflow.Tasks.EndWorkFlow\Wexflow.Tasks.EndWorkFlow.csproj">
-      <Project>{75c1221b-dcbc-4d5c-b47c-808d7ee23128}</Project>
-      <Name>Wexflow.Tasks.EndWorkFlow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.InspectorConfirm\Wexflow.Tasks.InspectorConfirm.csproj">
       <Project>{8662576e-63d9-42ef-a00d-26003ed407e9}</Project>
       <Name>Wexflow.Tasks.InspectorConfirm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.IsCurrentTerminalInstalled\Wexflow.Tasks.IsCurrentTerminalInstalled.csproj">
+      <Project>{7c97e1a3-fe37-4dd6-816d-86d8a2ea938e}</Project>
+      <Name>Wexflow.Tasks.IsCurrentTerminalInstalled</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.IsPreviewsTerminalInstalled\Wexflow.Tasks.IsPreviewsTerminalInstalled.csproj">
+      <Project>{33779d91-f582-40f6-8932-095edd29d896}</Project>
+      <Name>Wexflow.Tasks.IsPreviewsTerminalInstalled</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.IsSystemOpenCode\Wexflow.Tasks.IsSystemOpenCode.csproj">
+      <Project>{0af85911-ce0c-4cee-b62e-e4fce33cd075}</Project>
+      <Name>Wexflow.Tasks.IsSystemOpenCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.NeedCheckByBank\Wexflow.Tasks.NeedCheckByBank.csproj">
+      <Project>{6bcd306e-c318-42d8-878b-05cd49c4b2a0}</Project>
+      <Name>Wexflow.Tasks.NeedCheckByBank</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.NeedExternalCall\Wexflow.Tasks.NeedExternalCall.csproj">
+      <Project>{3a5ca2b1-3af2-469a-a96d-765c7f2a4f95}</Project>
+      <Name>Wexflow.Tasks.NeedExternalCall</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.NeedNewMarketing\Wexflow.Tasks.NeedNewMarketing.csproj">
+      <Project>{1ef25ee6-85ef-48a3-9a24-19a982ca3fff}</Project>
+      <Name>Wexflow.Tasks.NeedNewMarketing</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.View\Wexflow.Tasks.View.csproj">
       <Project>{c84f5b17-2233-44a4-8134-7ee16881e8b2}</Project>

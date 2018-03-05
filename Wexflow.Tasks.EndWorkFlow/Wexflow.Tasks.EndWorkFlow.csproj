@@ -43,10 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cancelation.Core\Cancelation.Core.csproj">
-      <Project>{DBE75BD2-396C-42E4-8A8D-C60C75DA1D6F}</Project>
-      <Name>Cancelation.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\src\Contract\Contract.csproj">
       <Project>{829C4D92-369E-4BE9-BC44-31BD098C2615}</Project>
       <Name>Contract</Name>

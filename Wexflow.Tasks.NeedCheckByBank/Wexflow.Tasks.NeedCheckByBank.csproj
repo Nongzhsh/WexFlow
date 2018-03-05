@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{27634E09-9209-4CD8-A915-3671D89AD7F1}</ProjectGuid>
+    <ProjectGuid>{6BCD306E-C318-42D8-878B-05CD49C4B2A0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wexflow.Tasks.CheckConditions</RootNamespace>
-    <AssemblyName>Wexflow.Tasks.CheckConditions</AssemblyName>
+    <RootNamespace>Wexflow.Tasks.NeedCheckByBank</RootNamespace>
+    <AssemblyName>Wexflow.Tasks.NeedCheckByBank</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckConditions.cs" />
+    <Compile Include="NeedCheckByBank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
