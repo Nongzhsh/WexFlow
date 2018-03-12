@@ -8,12 +8,13 @@ namespace Wexflow.Tasks.CheckConditions
 {
     public class CheckConditions : Task
     {
-        static string _userId;
+        static long _userId;
         static TimeSpan _interval;
 
         public CheckConditions(XElement xe, Workflow wf) : base(xe, wf)
         {
-            _userId = GetSetting("userId");
+            if (!string.IsNullOrWhiteSpace(GetSetting("userId")))
+                _userId = long.Parse(GetSetting("userId"));
 
             if (!string.IsNullOrWhiteSpace(GetSetting("interval")))
                 _interval = TimeSpan.Parse(GetSetting("interval"));
@@ -24,7 +25,6 @@ namespace Wexflow.Tasks.CheckConditions
         {
             // TODO EXCEPTION HANDLING.
             // TODO IMPLEMENT WEB SERVICES TO GET CONDITION RESULT.
-            model.UserId = int.Parse(_userId);
             var serviceResult = true;
 
             while (true)
@@ -32,12 +32,12 @@ namespace Wexflow.Tasks.CheckConditions
                 if (serviceResult)
                 {
                     // 
-                    return new TaskStatus(Status.Success);
+                    return new TaskStatus(Status.Success, true);
                 }
                 else
                 {
                     // TODO SET USERID
-                    return new TaskStatus(Status.Error);
+                    return new TaskStatus(Status.Error, false);
                 }
                 Thread.Sleep(_interval);
             }

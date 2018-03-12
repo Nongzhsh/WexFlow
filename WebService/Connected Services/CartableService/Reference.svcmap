@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fac40b84-2089-4a25-83ec-10eb7852cc9d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.16.11.82:9007/MMS/cartable" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Cartable.xsd" MetadataType="Schema" ID="521391ee-0bea-413b-b6e6-c2370273ecc5" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd3" />
+    <MetadataFile FileName="Cartable.disco" MetadataType="Disco" ID="fbaeee0f-9c33-4d72-979e-0fb3d1e1b96a" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?disco" />
+    <MetadataFile FileName="Cartable1.xsd" MetadataType="Schema" ID="d0035ed8-cd2e-4f89-b183-916aae5cd017" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd8" />
+    <MetadataFile FileName="Cartable2.xsd" MetadataType="Schema" ID="21b7e28e-f559-4733-ac79-4ee4924cf9ff" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd4" />
+    <MetadataFile FileName="Cartable3.xsd" MetadataType="Schema" ID="ad0f6000-aa0e-4525-b9c5-dcff0d18dc4e" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd0" />
+    <MetadataFile FileName="CartableService.wsdl" MetadataType="Wsdl" ID="da322e64-255b-40a3-b8b8-c924dac407a7" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?wsdl" />
+    <MetadataFile FileName="Cartable4.xsd" MetadataType="Schema" ID="0e3a8986-fffc-4ddd-bfdc-0a0fefac3157" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd5" />
+    <MetadataFile FileName="Cartable5.xsd" MetadataType="Schema" ID="42b238c8-9cf8-4e94-a27a-d8fd642e7f5b" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd1" />
+    <MetadataFile FileName="Cartable6.xsd" MetadataType="Schema" ID="5a00f218-8a2b-4d81-b146-be1129f445e4" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd9" />
+    <MetadataFile FileName="Cartable7.xsd" MetadataType="Schema" ID="42c697a8-8974-4fdb-bd2e-df9b138b80da" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd6" />
+    <MetadataFile FileName="Cartable8.xsd" MetadataType="Schema" ID="cf1ce4cb-2ad2-499a-9687-3ebec6180b63" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd2" />
+    <MetadataFile FileName="Cartable9.xsd" MetadataType="Schema" ID="cf9223c0-20dc-4261-a47e-874d7c94d1d2" SourceId="1" SourceUrl="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" />
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" />
+  <xs:element name="FindAllCartableRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="whereClause" nillable="true" type="q1:BaseInputOfCartableGtasGmS9" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="employeeIDList" nillable="true" type="q2:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllCartableRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="FindAllCartableRecordResult" nillable="true" type="q3:BasePagingResultOfArrayOfCartableValueaLASQhIl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="task" nillable="true" type="q4:BaseInputOfCartableGtasGmS9" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="InsertTaskResult" nillable="true" type="q5:BaseResultOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskDuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="task" nillable="true" type="q6:BaseInputOfCartableGtasGmS9" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskDurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="UpdateTaskDurationResult" nillable="true" type="q7:BaseResultOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeenTaskInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="taskID" nillable="true" type="q8:BaseInputOflong" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SeenTaskInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="SeenTaskInfoResult" nillable="true" type="q9:BaseResultOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForwardTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="task" nillable="true" type="q10:BaseInputOfCartableGtasGmS9" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForwardTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="ForwardTaskResult" nillable="true" type="q11:BaseResultOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="request" nillable="true" type="q12:BaseInputOfRequestWorkflowGtasGmS9" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="cartableType" type="q13:CartableType" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="InsertRequestResult" nillable="true" type="q14:BaseResultOfKeyValuePairOflongstringR8RmUPp7" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="request" nillable="true" type="q15:BaseInputOfRequestWorkflowGtasGmS9" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="UpdateRequestResult" nillable="true" type="q16:BaseResultOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="requestID" nillable="true" type="q17:BaseInputOflong" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="DeleteRequestResult" nillable="true" type="q18:BaseResultOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

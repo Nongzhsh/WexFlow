@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CartableFlowStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Approve" />
+      <xs:enumeration value="Reject" />
+      <xs:enumeration value="Send" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CartableFlowStatus" nillable="true" type="tns:CartableFlowStatus" />
+  <xs:simpleType name="CartableStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Viewed" />
+      <xs:enumeration value="Unseen" />
+      <xs:enumeration value="Done" />
+      <xs:enumeration value="End" />
+      <xs:enumeration value="Disabled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CartableStatus" nillable="true" type="tns:CartableStatus" />
+  <xs:simpleType name="CartableType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cancelation" />
+      <xs:enumeration value="Assingment" />
+      <xs:enumeration value="ChangeAccount" />
+      <xs:enumeration value="Marketing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CartableType" nillable="true" type="tns:CartableType" />
+</xs:schema>

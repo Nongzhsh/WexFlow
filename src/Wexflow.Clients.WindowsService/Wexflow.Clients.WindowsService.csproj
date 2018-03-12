@@ -96,9 +96,17 @@
       <Project>{04bea968-d7db-40f4-9898-a930e3b8b70c}</Project>
       <Name>Wexflow.Tasks.CheckForBeingNewMarketing</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.Complete\Wexflow.Tasks.Complete.csproj">
+      <Project>{5068c132-6953-4313-9071-cdc00c44942b}</Project>
+      <Name>Wexflow.Tasks.Complete</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.ConfirmEmploy\Wexflow.Tasks.ConfirmEmploy.csproj">
       <Project>{250eca88-102a-4341-b6df-1696b91914fa}</Project>
       <Name>Wexflow.Tasks.ConfirmEmploy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Wexflow.Tasks.End\Wexflow.Tasks.End.csproj">
+      <Project>{e0074016-f551-4f08-812f-185bca211bb7}</Project>
+      <Name>Wexflow.Tasks.End</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.InspectorConfirm\Wexflow.Tasks.InspectorConfirm.csproj">
       <Project>{8662576e-63d9-42ef-a00d-26003ed407e9}</Project>

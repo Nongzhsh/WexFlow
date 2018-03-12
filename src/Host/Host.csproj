@@ -23,7 +23,9 @@
     <ProjectReference Include="..\..\Wexflow.Tasks.BankConfirm\Wexflow.Tasks.BankConfirm.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.CheckConditions\Wexflow.Tasks.CheckConditions.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.CheckForBeingNewMarketing\Wexflow.Tasks.CheckForBeingNewMarketing.csproj" />
+    <ProjectReference Include="..\..\Wexflow.Tasks.Complete\Wexflow.Tasks.Complete.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.ConfirmEmploy\Wexflow.Tasks.ConfirmEmploy.csproj" />
+    <ProjectReference Include="..\..\Wexflow.Tasks.End\Wexflow.Tasks.End.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.InspectorConfirm\Wexflow.Tasks.InspectorConfirm.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.IsCurrentTerminalInstalled\Wexflow.Tasks.IsCurrentTerminalInstalled.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.IsPreviewsTerminalInstalled\Wexflow.Tasks.IsPreviewsTerminalInstalled.csproj" />

@@ -51,6 +51,10 @@
       <Project>{46257949-80b5-48f2-9b83-29354c339869}</Project>
       <Name>Wexflow.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebService\WebService.csproj">
+      <Project>{6375A63C-536E-4AE3-BDDB-14530574FF82}</Project>
+      <Name>WebService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -673,7 +673,7 @@ namespace Wexflow.Core
                 if (@if != null)
                 {
                     var doIf = @if;
-                    RunIf(tasks, nodes, doIf, ref success, ref warning, ref atLeastOneSucceed);
+                    RunIf(tasks, nodes, doIf, ref success, ref warning, ref atLeastOneSucceed, model);
                 }
                 else if (startNode is While)
                 {
@@ -714,7 +714,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunTasks(Task[] tasks, Node[] nodes, Node node, ref bool success, ref bool warning, ref bool atLeastOneSucceed,RequestModel model = null)
+        void RunTasks(Task[] tasks, Node[] nodes, Node node, ref bool success, ref bool warning, ref bool atLeastOneSucceed, RequestModel model = null)
         {
             if (node != null)
             {
@@ -724,17 +724,17 @@ namespace Wexflow.Core
                     if (if1 != null)
                     {
                         var @if = if1;
-                        RunIf(tasks, nodes, @if, ref success, ref warning, ref atLeastOneSucceed);
+                        RunIf(tasks, nodes, @if, ref success, ref warning, ref atLeastOneSucceed, model);
                     }
                     else if (node is While)
                     {
                         var @while = (While)node;
-                        RunWhile(tasks, nodes, @while, ref success, ref warning, ref atLeastOneSucceed);
+                        RunWhile(tasks, nodes, @while, ref success, ref warning, ref atLeastOneSucceed, model);
                     }
                     else
                     {
                         var @switch = (Switch)node;
-                        RunSwitch(tasks, nodes, @switch, ref success, ref warning, ref atLeastOneSucceed);
+                        RunSwitch(tasks, nodes, @switch, ref success, ref warning, ref atLeastOneSucceed, model);
                     }
                 }
                 else
@@ -758,7 +758,7 @@ namespace Wexflow.Core
                                 if (if1 != null)
                                 {
                                     var @if = if1;
-                                    RunIf(tasks, nodes, @if, ref success, ref warning, ref atLeastOneSucceed,model);
+                                    RunIf(tasks, nodes, @if, ref success, ref warning, ref atLeastOneSucceed, model);
                                 }
                                 else if (childNode is While)
                                 {
@@ -824,7 +824,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunIf(Task[] tasks, Node[] nodes, If @if, ref bool success, ref bool warning, ref bool atLeastOneSucceed,RequestModel model = null)
+        void RunIf(Task[] tasks, Node[] nodes, If @if, ref bool success, ref bool warning, ref bool atLeastOneSucceed, RequestModel model = null)
         {
             var ifTask = GetTask(@if.IfId);
 
@@ -864,7 +864,7 @@ namespace Wexflow.Core
                             // Run Tasks
                             var elseStartNode = GetStartupNode(@if.ElseNodes);
 
-                            RunTasks(elseTasks, @if.ElseNodes, elseStartNode, ref success, ref warning, ref atLeastOneSucceed,model);
+                            RunTasks(elseTasks, @if.ElseNodes, elseStartNode, ref success, ref warning, ref atLeastOneSucceed, model);
                         }
                     }
 
@@ -883,7 +883,7 @@ namespace Wexflow.Core
             }
         }
 
-        void RunWhile(Task[] tasks, Node[] nodes, While @while, ref bool success, ref bool warning, ref bool atLeastOneSucceed,RequestModel model = null)
+        void RunWhile(Task[] tasks, Node[] nodes, While @while, ref bool success, ref bool warning, ref bool atLeastOneSucceed, RequestModel model = null)
         {
             var whileTask = GetTask(@while.WhileId);
 

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MMS.BLL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MMS.Model" />
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" />
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.ServiceModel" />
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:complexType name="BaseInputOfCartableGtasGmS9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseInputOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Cartable" Namespace="http://schemas.datacontract.org/2004/07/MMS.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MMS.Model" minOccurs="0" name="Value" nillable="true" type="q1:Cartable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseInputOfCartableGtasGmS9" nillable="true" type="tns:BaseInputOfCartableGtasGmS9" />
+  <xs:complexType name="BaseInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAgent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseInput" nillable="true" type="tns:BaseInput" />
+  <xs:complexType name="BasePagingResultOfArrayOfCartableValueaLASQhIl">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BasePagingResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCartableValue" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:long" />
+      <xs:element minOccurs="0" name="ExceptionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" minOccurs="0" name="Value" nillable="true" type="q2:ArrayOfCartableValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasePagingResultOfArrayOfCartableValueaLASQhIl" nillable="true" type="tns:BasePagingResultOfArrayOfCartableValueaLASQhIl" />
+  <xs:complexType name="BaseResultOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseResultOfboolean" nillable="true" type="tns:BaseResultOfboolean" />
+  <xs:complexType name="BaseResult">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.ServiceModel" minOccurs="0" name="Exception" nillable="true" type="q3:FaultException" />
+      <xs:element minOccurs="0" name="ExceptionCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseResult" nillable="true" type="tns:BaseResult" />
+  <xs:complexType name="BaseInputOflong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseInputOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseInput">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseInputOflong" nillable="true" type="tns:BaseInputOflong" />
+  <xs:complexType name="BaseInputOfRequestWorkflowGtasGmS9">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseInputOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RequestWorkflow" Namespace="http://schemas.datacontract.org/2004/07/MMS.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MMS.Model" minOccurs="0" name="Value" nillable="true" type="q4:RequestWorkflow" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseInputOfRequestWorkflowGtasGmS9" nillable="true" type="tns:BaseInputOfRequestWorkflowGtasGmS9" />
+  <xs:complexType name="BaseResultOfKeyValuePairOflongstringR8RmUPp7">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="KeyValuePairOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+            <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="Value" type="q5:KeyValuePairOflongstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseResultOfKeyValuePairOflongstringR8RmUPp7" nillable="true" type="tns:BaseResultOfKeyValuePairOflongstringR8RmUPp7" />
+</xs:schema>
