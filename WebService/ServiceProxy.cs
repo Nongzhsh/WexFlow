@@ -1,46 +1,80 @@
-﻿using System;
+﻿using Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WebService.CartableService;
 
 namespace WebService
 {
     public class ServiceProxy
     {
 
-        public void InsertTask()
+        public void InsertTask(
+            long currentUserId,
+            long? flowId,
+            long? taskId,
+            string taskDecription,
+            long employId,
+            long requestId,
+            long senderID)
         {
-            CartableService.CartableServiceClient serviceClient = new CartableService.CartableServiceClient();
-            serviceClient.InsertTask(new CartableService.InsertTaskRequest
+            var serviceClient = new CartableServiceClient();
+
+            var taskRequest = new InsertTaskRequest
             {
-                task = new CartableService.BaseInputOfCartableGtasGmS9
+                employeeID = employId,
+                requestID = requestId,
+                task = new BaseInputOfCartableGtasGmS9
                 {
-                    Value = new CartableService.Cartable
+                    Value = new Cartable
                     {
-                        ID = 1,
-                        CurrentUserID = 1,
-                        TaskID = 1,
-                        FlowID = 2
+                        CurrentUserID = currentUserId,
+                        TaskID = taskId,
+                        FlowID = flowId,
+                        SenderID = senderID,
+                        Status = 1
                     }
                 }
-            });
+            };
+            var result = serviceClient.InsertTask(taskRequest);
         }
 
-        public void ForwardService(long userId, long? flowId, long? taskId)
+        public int CheckConfirm(long requestId)
         {
-            CartableService.CartableServiceClient serviceClient = new CartableService.CartableServiceClient();
-            serviceClient.ForwardTask(new CartableService.ForwardTaskRequest
+            CartableServiceClient serviceClient = new CartableServiceClient();
+            var result = serviceClient.CheckConfirmRequest(new CheckConfirmRequestRequest
             {
-                task = new CartableService.BaseInputOfCartableGtasGmS9
+                requestID = new BaseInputOflong { Value = requestId }
+            });
+
+            return result.CheckConfirmRequestResult.Value;
+        }
+
+        public void ForwardService(
+            long id,
+            long currentUserId,
+            long? flowId,
+            long? taskId,
+            string taskDecription,
+            long requestId
+            )
+        {
+            CartableServiceClient serviceClient = new CartableServiceClient();
+            var result = serviceClient.ForwardTask(new ForwardTaskRequest
+            {
+                task = new BaseInputOfCartableGtasGmS9
                 {
-                    Value = new CartableService.Cartable
+                    Value = new Cartable
                     {
-                        ID = 2,
-                        CurrentUserID = userId,
+                        ID = requestId,
+                        CurrentUserID = currentUserId,
                         FlowID = flowId,
-                        TaskID = taskId
+                        TaskID = taskId,
+                        ActionName = taskDecription
                     }
-                }
+                },
+                requestID = model.ID
             });
             // 1,24,25,43,44
         }

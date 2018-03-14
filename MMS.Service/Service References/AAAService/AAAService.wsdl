@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AAAService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" />
+      <xsd:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" />
+      <xsd:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAAAService_AddUserToAAA_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToAAA" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserToAAA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToAAAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_ChangeUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_ChangeUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetResetPasswordToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResetPasswordToken" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetResetPasswordToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResetPasswordTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_UpdateUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_UpdateUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetDomainDatas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainDatas" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetDomainDatas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainDatasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_HasPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasPermission" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_HasPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetMenus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenus" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetMenus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserPermission" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserApplicationDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserApplicationDomain" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddUserApplicationDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserApplicationDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDomain" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_RemoveUserPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserPermission" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_RemoveUserPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_RemoveUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_RemoveUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_RemoveUserApplicationDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserApplicationDomain" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_RemoveUserApplicationDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserApplicationDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetApplications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplications" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetApplications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetChannels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannels" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetChannels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChannelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddChannel" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetUserApplicationDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserApplicationDomain" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetUserApplicationDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserApplicationDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRole" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermission" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMenu" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddApplication" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddPeriodicity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPeriodicity" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddPeriodicity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPeriodicityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetPeriodicitys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodicitys" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_GetPeriodicitys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeriodicitysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddPermissionRoel_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermissionRoel" />
+  </wsdl:message>
+  <wsdl:message name="IAAAService_AddPermissionRoel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermissionRoelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAAAService">
+    <wsdl:operation name="AddUserToAAA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddUserToAAA" message="tns:IAAAService_AddUserToAAA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddUserToAAAResponse" message="tns:IAAAService_AddUserToAAA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/Login" message="tns:IAAAService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/LoginResponse" message="tns:IAAAService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/ChangeUserPassword" message="tns:IAAAService_ChangeUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/ChangeUserPasswordResponse" message="tns:IAAAService_ChangeUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResetPasswordToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetResetPasswordToken" message="tns:IAAAService_GetResetPasswordToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetResetPasswordTokenResponse" message="tns:IAAAService_GetResetPasswordToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/ResetPassword" message="tns:IAAAService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/ResetPasswordResponse" message="tns:IAAAService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/UpdateUserInfo" message="tns:IAAAService_UpdateUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/UpdateUserInfoResponse" message="tns:IAAAService_UpdateUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainDatas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetDomainDatas" message="tns:IAAAService_GetDomainDatas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetDomainDatasResponse" message="tns:IAAAService_GetDomainDatas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetRoles" message="tns:IAAAService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetRolesResponse" message="tns:IAAAService_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetPermissions" message="tns:IAAAService_GetPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetPermissionsResponse" message="tns:IAAAService_GetPermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/HasPermission" message="tns:IAAAService_HasPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/HasPermissionResponse" message="tns:IAAAService_HasPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetMenus" message="tns:IAAAService_GetMenus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetMenusResponse" message="tns:IAAAService_GetMenus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetUsers" message="tns:IAAAService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetUsersResponse" message="tns:IAAAService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddUserPermission" message="tns:IAAAService_AddUserPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddUserPermissionResponse" message="tns:IAAAService_AddUserPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddUserRole" message="tns:IAAAService_AddUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddUserRoleResponse" message="tns:IAAAService_AddUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserApplicationDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddUserApplicationDomain" message="tns:IAAAService_AddUserApplicationDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddUserApplicationDomainResponse" message="tns:IAAAService_AddUserApplicationDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddDomain" message="tns:IAAAService_AddDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddDomainResponse" message="tns:IAAAService_AddDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/RemoveUserPermission" message="tns:IAAAService_RemoveUserPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/RemoveUserPermissionResponse" message="tns:IAAAService_RemoveUserPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/RemoveUserRole" message="tns:IAAAService_RemoveUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/RemoveUserRoleResponse" message="tns:IAAAService_RemoveUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserApplicationDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/RemoveUserApplicationDomain" message="tns:IAAAService_RemoveUserApplicationDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/RemoveUserApplicationDomainResponse" message="tns:IAAAService_RemoveUserApplicationDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetApplications" message="tns:IAAAService_GetApplications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetApplicationsResponse" message="tns:IAAAService_GetApplications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetChannels" message="tns:IAAAService_GetChannels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetChannelsResponse" message="tns:IAAAService_GetChannels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddChannel" message="tns:IAAAService_AddChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddChannelResponse" message="tns:IAAAService_AddChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserApplicationDomain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetUserApplicationDomain" message="tns:IAAAService_GetUserApplicationDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetUserApplicationDomainResponse" message="tns:IAAAService_GetUserApplicationDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddRole" message="tns:IAAAService_AddRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddRoleResponse" message="tns:IAAAService_AddRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddPermission" message="tns:IAAAService_AddPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddPermissionResponse" message="tns:IAAAService_AddPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddMenu" message="tns:IAAAService_AddMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddMenuResponse" message="tns:IAAAService_AddMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddApplication" message="tns:IAAAService_AddApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddApplicationResponse" message="tns:IAAAService_AddApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPeriodicity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddPeriodicity" message="tns:IAAAService_AddPeriodicity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddPeriodicityResponse" message="tns:IAAAService_AddPeriodicity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodicitys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/GetPeriodicitys" message="tns:IAAAService_GetPeriodicitys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/GetPeriodicitysResponse" message="tns:IAAAService_GetPeriodicitys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPermissionRoel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAAAService/AddPermissionRoel" message="tns:IAAAService_AddPermissionRoel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAAAService/AddPermissionRoelResponse" message="tns:IAAAService_AddPermissionRoel_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAAAService" type="tns:IAAAService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUserToAAA">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddUserToAAA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResetPasswordToken">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetResetPasswordToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainDatas">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetDomainDatas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissions">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasPermission">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/HasPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenus">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserPermission">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddUserPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRole">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserApplicationDomain">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddUserApplicationDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDomain">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserPermission">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/RemoveUserPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserRole">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/RemoveUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserApplicationDomain">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/RemoveUserApplicationDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplications">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannels">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChannel">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserApplicationDomain">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetUserApplicationDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMenu">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPeriodicity">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddPeriodicity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodicitys">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/GetPeriodicitys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermissionRoel">
+      <soap:operation soapAction="http://tempuri.org/IAAAService/AddPermissionRoel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AAAService">
+    <wsdl:port name="BasicHttpBinding_IAAAService" binding="tns:BasicHttpBinding_IAAAService">
+      <soap:address location="http://localhost:8003/AAA/AAAService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

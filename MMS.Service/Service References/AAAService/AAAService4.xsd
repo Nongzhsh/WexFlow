@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" />
+  <xs:element name="AddUserToAAA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q1:AddUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserToAAAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddUserToAAAResult" nillable="true" type="q2:AddUserResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q3:LoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="LoginResult" nillable="true" type="q4:LoginResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q5:ChangePasswordRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="ChangeUserPasswordResult" nillable="true" type="q6:ChangePasswordResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResetPasswordToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q7:GetResetPasswordTokenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResetPasswordTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetResetPasswordTokenResult" nillable="true" type="q8:GetResetPasswordTokenResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q9:ResetPasswordRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="ResetPasswordResult" nillable="true" type="q10:ResetPasswordResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q11:UpdateUserInfoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="UpdateUserInfoResult" nillable="true" type="q12:UpdateUserInfoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDomainDatas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q13:GetDomainsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDomainDatasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetDomainDatasResult" nillable="true" type="q14:GetDomainDatasResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q15:GetRolesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetRolesResult" nillable="true" type="q16:GetRolesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q17:GetPermissionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetPermissionsResult" nillable="true" type="q18:GetPermissionsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q19:HasPermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasPermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="HasPermissionResult" nillable="true" type="q20:HasPermissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="requst" nillable="true" type="q21:GetMenusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetMenusResult" nillable="true" type="q22:GetMenusResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q23:GetUsersRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetUsersResult" nillable="true" type="q24:GetUsersResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q25:AddUserPermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserPermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddUserPermissionResult" nillable="true" type="q26:AddUserPermissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q27:AddUserRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddUserRoleResult" nillable="true" type="q28:AddUserRoleResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserApplicationDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q29:AddUserDomainRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserApplicationDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddUserApplicationDomainResult" nillable="true" type="q30:AddUserDomainDataResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q31:AddDomainRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddDomainResult" nillable="true" type="q32:AddDomainResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q33:RemoveUserPermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserPermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="RemoveUserPermissionResult" nillable="true" type="q34:RemoveUserPermissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q35:RemoveUserRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="RemoveUserRoleResult" nillable="true" type="q36:RemoveUserRoleResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserApplicationDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q37:RemoveUserDomainRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserApplicationDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="RemoveUserApplicationDomainResult" nillable="true" type="q38:RemoveUserDomainDataResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q39:GetApplicationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetApplicationsResult" nillable="true" type="q40:GetApplicationsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q41:GetChannelsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetChannelsResult" nillable="true" type="q42:GetChannelsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q43:AddChannelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddChannelResult" nillable="true" type="q44:AddChannelResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserApplicationDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q45:GetUserApplicationDomainsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserApplicationDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetUserApplicationDomainResult" nillable="true" type="q46:GetUserApplicationDomainsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q47:AddRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddRoleResult" nillable="true" type="q48:AddRoleResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q49:AddPermissionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddPermissionResult" nillable="true" type="q50:AddPermissionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q51:AddMenuRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddMenuResult" nillable="true" type="q52:AddMenuResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q53:AddApplicationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddApplicationResult" nillable="true" type="q54:AddApplicationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPeriodicity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q55:AddPeriodcityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPeriodicityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddPeriodicityResult" nillable="true" type="q56:AddPeriodicityResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPeriodicitys">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q57:GetPeriodicitysRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPeriodicitysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="GetPeriodicitysResult" nillable="true" type="q58:GetPeriodicitysResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionRoel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="request" nillable="true" type="q59:AddPermissionRoelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermissionRoelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" minOccurs="0" name="AddPermissionRoelResult" nillable="true" type="q60:AddPermissionRoelResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -55,5 +55,8 @@ namespace Wexflow.Clients.WindowsService
 
         [OperationContract]
         string GetTaskXml(Stream streamdata);
+
+        [OperationContract]
+        void RunCustomFlow(Stream streamdata);
     }
 }

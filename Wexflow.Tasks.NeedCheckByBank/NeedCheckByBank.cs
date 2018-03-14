@@ -1,7 +1,7 @@
 ﻿using Contract;
+using Newtonsoft.Json;
 using System;
 using System.Threading;
-using System.Xml;
 using System.Xml.Linq;
 using WebService;
 using Wexflow.Core;
@@ -24,27 +24,26 @@ namespace Wexflow.Tasks.NeedCheckByBank
 
         public override TaskStatus Run(RequestModel model = null)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("C:\\Wexflow\\Workflows\\Cancelation.xml");
-
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes[1].ChildNodes)
-            {
-                var id = node.Attributes[0].Value;
-                var desc = node.Attributes[2].Value;
-                string text = node.InnerText; //or loop through its children as well
-            }
-
-            new ServiceProxy().InsertTask();
-            var serviceResult = false;
-
+            var taskID = GetTaskInfo.GetTaskId(GetType().Name);
+            var taskDescription = GetTaskInfo.GetTaskDescriotion(GetType().Name);
+            var innerRequestModel = JsonConvert.DeserializeObject<InnerRequestModel>(model.TaskModel);
+            var currentUserID = _userId;
+            new ServiceProxy().ForwardService(
+                innerRequestModel.RequestID,
+                currentUserID,
+                model.Id,
+                taskID,
+                taskDescription,
+                innerRequestModel.RequestID);
             while (true)
             {
-                if (serviceResult)
+                var serviceResult = new ServiceProxy().CheckConfirm(innerRequestModel.RequestID);
+                if (serviceResult == 1)
                 {
                     // IsPreviewsTerminalInstalled
                     return new TaskStatus(Status.Success, true);
                 }
-                else
+                else if (serviceResult == 0)
                 {
                     return new TaskStatus(Status.Error, false);
                 }

@@ -76,14 +76,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\tests\Wexflow.Tasks.Tests\Wexflow.Tasks.Tests.csproj">
-      <Project>{2a378a60-ac8d-45b3-a14d-8885fde24410}</Project>
-      <Name>Wexflow.Tasks.Tests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Wexflow.Tasks.AddEmploy\Wexflow.Tasks.AddEmploy.csproj">
-      <Project>{6a7239b4-6275-49c8-9008-81e340047850}</Project>
-      <Name>Wexflow.Tasks.AddEmploy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.BankConfirm\Wexflow.Tasks.BankConfirm.csproj">
       <Project>{4bd09825-f704-4e23-add3-9e72c24f5fe0}</Project>
       <Name>Wexflow.Tasks.BankConfirm</Name>
@@ -99,10 +91,6 @@
     <ProjectReference Include="..\..\Wexflow.Tasks.Complete\Wexflow.Tasks.Complete.csproj">
       <Project>{5068c132-6953-4313-9071-cdc00c44942b}</Project>
       <Name>Wexflow.Tasks.Complete</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Wexflow.Tasks.ConfirmEmploy\Wexflow.Tasks.ConfirmEmploy.csproj">
-      <Project>{250eca88-102a-4341-b6df-1696b91914fa}</Project>
-      <Name>Wexflow.Tasks.ConfirmEmploy</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Wexflow.Tasks.End\Wexflow.Tasks.End.csproj">
       <Project>{e0074016-f551-4f08-812f-185bca211bb7}</Project>
@@ -136,9 +124,9 @@
       <Project>{1ef25ee6-85ef-48a3-9a24-19a982ca3fff}</Project>
       <Name>Wexflow.Tasks.NeedNewMarketing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Wexflow.Tasks.View\Wexflow.Tasks.View.csproj">
-      <Project>{c84f5b17-2233-44a4-8134-7ee16881e8b2}</Project>
-      <Name>Wexflow.Tasks.View</Name>
+    <ProjectReference Include="..\Contract\Contract.csproj">
+      <Project>{829C4D92-369E-4BE9-BC44-31BD098C2615}</Project>
+      <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wexflow.Core.Service.Contracts\Wexflow.Core.Service.Contracts.csproj">
       <Project>{7debd0d9-ea9b-445c-9b6d-f426908ce736}</Project>

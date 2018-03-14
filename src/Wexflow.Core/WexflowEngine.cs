@@ -291,11 +291,11 @@ namespace Wexflow.Core
 
         public void StartWorkflowModel(RequestModel model)
         {
-            var wf = GetWorkflow(model.WorkflowId);
+            var wf = GetWorkflow(model.Id);
 
             if (wf == null)
             {
-                Logger.ErrorFormat("Workflow {0} not found.", model.WorkflowId);
+                Logger.ErrorFormat("Workflow {0} not found.", model.Id);
             }
             else
             {
@@ -323,11 +323,11 @@ namespace Wexflow.Core
 
         public void StopWorkflowModel(RequestModel model)
         {
-            var wf = GetWorkflow(model.WorkflowId);
+            var wf = GetWorkflow(model.Id);
 
             if (wf == null)
             {
-                Logger.ErrorFormat("Workflow {0} not found.", model.WorkflowId);
+                Logger.ErrorFormat("Workflow {0} not found.", model.Id);
             }
             else
             {

@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AAA.BusinessServices.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" />
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AddUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ExpireDate" type="q1:DateTimeOffset" />
+          <xs:element minOccurs="0" name="ParentUser_Id" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="User" nillable="true" type="q2:User" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserRequest" nillable="true" type="tns:AddUserRequest" />
+  <xs:complexType name="BaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionToken" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserAgent" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseRequest" nillable="true" type="tns:BaseRequest" />
+  <xs:complexType name="AddDomainRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="DomainData" nillable="true" type="q3:DomainData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddDomainRequest" nillable="true" type="tns:AddDomainRequest" />
+  <xs:complexType name="AddUserDomainRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserDomainRequest" nillable="true" type="tns:AddUserDomainRequest" />
+  <xs:complexType name="AddUserPermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Perimssion_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserPermissionRequest" nillable="true" type="tns:AddUserPermissionRequest" />
+  <xs:complexType name="AddUserRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Role_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserRoleRequest" nillable="true" type="tns:AddUserRoleRequest" />
+  <xs:complexType name="ChangePasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="User" nillable="true" type="q4:User" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordRequest" nillable="true" type="tns:ChangePasswordRequest" />
+  <xs:complexType name="ExistUserNameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExistUserNameRequest" nillable="true" type="tns:ExistUserNameRequest" />
+  <xs:complexType name="GetDomainsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDomainsRequest" nillable="true" type="tns:GetDomainsRequest" />
+  <xs:complexType name="GetMenusRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Channel_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMenusRequest" nillable="true" type="tns:GetMenusRequest" />
+  <xs:complexType name="GetPermissionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Role_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPermissionsRequest" nillable="true" type="tns:GetPermissionsRequest" />
+  <xs:complexType name="GetResetPasswordTokenRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetResetPasswordTokenRequest" nillable="true" type="tns:GetResetPasswordTokenRequest" />
+  <xs:complexType name="GetRolesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRolesRequest" nillable="true" type="tns:GetRolesRequest" />
+  <xs:complexType name="GetUsersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUsersRequest" nillable="true" type="tns:GetUsersRequest" />
+  <xs:complexType name="LoginRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="OTP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginRequest" nillable="true" type="tns:LoginRequest" />
+  <xs:complexType name="RemoveUserDomainRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainId" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserDomainRequest" nillable="true" type="tns:RemoveUserDomainRequest" />
+  <xs:complexType name="RemoveUserPermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Perimssion_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserPermissionRequest" nillable="true" type="tns:RemoveUserPermissionRequest" />
+  <xs:complexType name="RemoveUserRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Role_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserRoleRequest" nillable="true" type="tns:RemoveUserRoleRequest" />
+  <xs:complexType name="ReqiredTokenRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="applicatio_Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReqiredTokenRequest" nillable="true" type="tns:ReqiredTokenRequest" />
+  <xs:complexType name="ResetPasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="User" nillable="true" type="q5:User" />
+          <xs:element minOccurs="0" name="tocken" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordRequest" nillable="true" type="tns:ResetPasswordRequest" />
+  <xs:complexType name="UpdateUserInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="User" nillable="true" type="q6:User" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateUserInfoRequest" nillable="true" type="tns:UpdateUserInfoRequest" />
+  <xs:complexType name="HasPermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Permission_Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HasPermissionRequest" nillable="true" type="tns:HasPermissionRequest" />
+  <xs:complexType name="GetUserApplicationDomainsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainData_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="UserApplicationDomain_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserApplicationDomainsRequest" nillable="true" type="tns:GetUserApplicationDomainsRequest" />
+  <xs:complexType name="AddUserResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="User_id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserResult" nillable="true" type="tns:AddUserResult" />
+  <xs:complexType name="BaseResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="tns:AAAException" />
+      <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseResult" nillable="true" type="tns:BaseResult" />
+  <xs:complexType name="AAAException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AAAException" nillable="true" type="tns:AAAException" />
+  <xs:complexType name="AddDomainResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddDomainResult" nillable="true" type="tns:AddDomainResult" />
+  <xs:complexType name="AddUserDomainDataResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserDomainDataResult" nillable="true" type="tns:AddUserDomainDataResult" />
+  <xs:complexType name="AddUserPermissionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserPermissionResult" nillable="true" type="tns:AddUserPermissionResult" />
+  <xs:complexType name="ChangePasswordResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordResult" nillable="true" type="tns:ChangePasswordResult" />
+  <xs:complexType name="ExistUserNameResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Exist" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExistUserNameResult" nillable="true" type="tns:ExistUserNameResult" />
+  <xs:complexType name="GetDomainDatasResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="DomainDatas" nillable="true" type="q7:ArrayOfDomainData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDomainDatasResult" nillable="true" type="tns:GetDomainDatasResult" />
+  <xs:complexType name="GetMenusResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="JsonMenus" nillable="true" type="xs:string" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Menus" nillable="true" type="q8:ArrayOfMenu" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMenusResult" nillable="true" type="tns:GetMenusResult" />
+  <xs:complexType name="GetPermissionsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Permissions" nillable="true" type="q9:ArrayOfPermission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPermissionsResult" nillable="true" type="tns:GetPermissionsResult" />
+  <xs:complexType name="GetResetPasswordTokenResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResetPassTocken" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetResetPasswordTokenResult" nillable="true" type="tns:GetResetPasswordTokenResult" />
+  <xs:complexType name="GetRolesResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Roles" nillable="true" type="q10:ArrayOfRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRolesResult" nillable="true" type="tns:GetRolesResult" />
+  <xs:complexType name="GetUsersResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Users" nillable="true" type="q11:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUsersResult" nillable="true" type="tns:GetUsersResult" />
+  <xs:complexType name="LoginResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SessionToken" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginResult" nillable="true" type="tns:LoginResult" />
+  <xs:complexType name="RemoveUserDomainDataResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserDomainDataResult" nillable="true" type="tns:RemoveUserDomainDataResult" />
+  <xs:complexType name="RemoveUserPermissionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserPermissionResult" nillable="true" type="tns:RemoveUserPermissionResult" />
+  <xs:complexType name="RemoveUserRoleResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserRoleResult" nillable="true" type="tns:RemoveUserRoleResult" />
+  <xs:complexType name="RequiredTokenResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RequiredTokenResult" nillable="true" type="tns:RequiredTokenResult" />
+  <xs:complexType name="ResetPasswordResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordResult" nillable="true" type="tns:ResetPasswordResult" />
+  <xs:complexType name="UpdateUserInfoResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateUserInfoResult" nillable="true" type="tns:UpdateUserInfoResult" />
+  <xs:complexType name="HasPermissionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValidDomainId" nillable="true" type="q12:ArrayOfguid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HasPermissionResult" nillable="true" type="tns:HasPermissionResult" />
+  <xs:complexType name="GetUserApplicationDomainsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Json" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserApplicationDomainsResult" nillable="true" type="tns:GetUserApplicationDomainsResult" />
+  <xs:complexType name="AddUserRoleResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserRoleResult" nillable="true" type="tns:AddUserRoleResult" />
+  <xs:complexType name="GetApplicationsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetApplicationsRequest" nillable="true" type="tns:GetApplicationsRequest" />
+  <xs:complexType name="GetApplicationsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Applications" nillable="true" type="q13:ArrayOfApplication" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetApplicationsResult" nillable="true" type="tns:GetApplicationsResult" />
+  <xs:complexType name="GetChannelsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChannelsRequest" nillable="true" type="tns:GetChannelsRequest" />
+  <xs:complexType name="GetChannelsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Channels" nillable="true" type="q14:ArrayOfChannel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChannelsResult" nillable="true" type="tns:GetChannelsResult" />
+  <xs:complexType name="AddChannelRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Channel" nillable="true" type="q15:Channel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddChannelRequest" nillable="true" type="tns:AddChannelRequest" />
+  <xs:complexType name="AddChannelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddChannelResult" nillable="true" type="tns:AddChannelResult" />
+  <xs:complexType name="AddRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Role" nillable="true" type="q16:Role" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddRoleRequest" nillable="true" type="tns:AddRoleRequest" />
+  <xs:complexType name="AddRoleResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddRoleResult" nillable="true" type="tns:AddRoleResult" />
+  <xs:complexType name="AddPermissionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Permission" nillable="true" type="q17:Permission" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddPermissionRequest" nillable="true" type="tns:AddPermissionRequest" />
+  <xs:complexType name="AddPermissionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddPermissionResult" nillable="true" type="tns:AddPermissionResult" />
+  <xs:complexType name="AddMenuRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Menu" nillable="true" type="q18:Menu" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddMenuRequest" nillable="true" type="tns:AddMenuRequest" />
+  <xs:complexType name="AddMenuResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddMenuResult" nillable="true" type="tns:AddMenuResult" />
+  <xs:complexType name="AddApplicationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Application" nillable="true" type="q19:Application" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddApplicationRequest" nillable="true" type="tns:AddApplicationRequest" />
+  <xs:complexType name="AddApplicationResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddApplicationResult" nillable="true" type="tns:AddApplicationResult" />
+  <xs:complexType name="AddPeriodcityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Periodicity" nillable="true" type="q20:Periodicity" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddPeriodcityRequest" nillable="true" type="tns:AddPeriodcityRequest" />
+  <xs:complexType name="AddPeriodicityResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddPeriodicityResult" nillable="true" type="tns:AddPeriodicityResult" />
+  <xs:complexType name="GetPeriodicitysRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Domain_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPeriodicitysRequest" nillable="true" type="tns:GetPeriodicitysRequest" />
+  <xs:complexType name="GetPeriodicitysResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" minOccurs="0" name="Perodicitis" nillable="true" type="q21:ArrayOfPeriodicity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPeriodicitysResult" nillable="true" type="tns:GetPeriodicitysResult" />
+  <xs:complexType name="AddPermissionRoelRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Permission_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Role_Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddPermissionRoelRequest" nillable="true" type="tns:AddPermissionRoelRequest" />
+  <xs:complexType name="AddPermissionRoelResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddPermissionRoelResult" nillable="true" type="tns:AddPermissionRoelResult" />
+</xs:schema>

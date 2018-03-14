@@ -16,7 +16,7 @@ namespace Wexflow.Tasks.Complete
 
         public override TaskStatus Run(RequestModel model = null)
         {
-            throw new NotImplementedException();
+            return new TaskStatus(Status.Success);
         }
     }
 }

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AAA.DomainModel.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8003/AAA/AAAService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="DomainData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="PTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="xs:int" />
+          <xs:element minOccurs="0" name="UserAppDomainDatas" nillable="true" type="tns:ArrayOfUserApplicationDomainData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DomainData" nillable="true" type="tns:DomainData" />
+  <xs:complexType name="Base">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ChangeDateTime" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="ChangeUser_Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEnable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Base" nillable="true" type="tns:Base" />
+  <xs:complexType name="Application">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationRolePermissions" nillable="true" type="tns:ArrayOfApplicationRolePermission" />
+          <xs:element minOccurs="0" name="DomainDatas" nillable="true" type="tns:ArrayOfDomainData" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="LoginFeildCount" type="xs:int" />
+          <xs:element minOccurs="0" name="PTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Permissions" nillable="true" type="tns:ArrayOfPermission" />
+          <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRole" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Application" nillable="true" type="tns:Application" />
+  <xs:complexType name="ArrayOfApplicationRolePermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicationRolePermission" nillable="true" type="tns:ApplicationRolePermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicationRolePermission" nillable="true" type="tns:ArrayOfApplicationRolePermission" />
+  <xs:complexType name="ApplicationRolePermission">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Permission" nillable="true" type="tns:Permission" />
+          <xs:element minOccurs="0" name="Permission_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="Role_Id" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApplicationRolePermission" nillable="true" type="tns:ApplicationRolePermission" />
+  <xs:complexType name="Permission">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="ApplicationRolePermissions" nillable="true" type="tns:ArrayOfApplicationRolePermission" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Menu" nillable="true" type="tns:Menu" />
+          <xs:element minOccurs="0" name="Menu_Id" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="PTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+  <xs:complexType name="Menu">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Channel" nillable="true" type="tns:Channel" />
+          <xs:element minOccurs="0" name="Channel_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfMenu" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="PTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:Menu" />
+          <xs:element minOccurs="0" name="Parent_Id" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Permission_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="xs:int" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Menu" nillable="true" type="tns:Menu" />
+  <xs:complexType name="Channel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="PTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Channel" nillable="true" type="tns:Channel" />
+  <xs:complexType name="ArrayOfMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Menu" nillable="true" type="tns:Menu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenu" nillable="true" type="tns:ArrayOfMenu" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationRolePermissions" nillable="true" type="tns:ArrayOfApplicationRolePermission" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="PTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfDomainData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DomainData" nillable="true" type="tns:DomainData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDomainData" nillable="true" type="tns:ArrayOfDomainData" />
+  <xs:complexType name="ArrayOfPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Permission" nillable="true" type="tns:Permission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermission" nillable="true" type="tns:ArrayOfPermission" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="ArrayOfUserApplicationDomainData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserApplicationDomainData" nillable="true" type="tns:UserApplicationDomainData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserApplicationDomainData" nillable="true" type="tns:ArrayOfUserApplicationDomainData" />
+  <xs:complexType name="UserApplicationDomainData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfUserApplicationDomainData" />
+          <xs:element minOccurs="0" name="DomainData" nillable="true" type="tns:DomainData" />
+          <xs:element minOccurs="0" name="DomainData_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:UserApplicationDomainData" />
+          <xs:element minOccurs="0" name="Parent_Id" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserDomainPermissions" nillable="true" type="tns:ArrayOfUserDomainDataPermission" />
+          <xs:element minOccurs="0" name="UserDomainRoles" nillable="true" type="tns:ArrayOfUserDomainDataRole" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserApplicationDomainData" nillable="true" type="tns:UserApplicationDomainData" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="BDate" type="q2:DateTimeOffset" />
+          <xs:element minOccurs="0" name="CellPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConfirmPass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ForceChangePass" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsLocked" nillable="true" type="xs:boolean" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="LastLoginDate" nillable="true" type="q3:DateTimeOffset" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="LockDateTime" nillable="true" type="q4:DateTimeOffset" />
+          <xs:element minOccurs="0" name="LoginFeildCount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ResetPassRequestDateTime" nillable="true" type="q5:DateTimeOffset" />
+          <xs:element minOccurs="0" name="ResetPassTocken" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Sex" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserApplications" nillable="true" type="tns:ArrayOfUserApplication" />
+          <xs:element minOccurs="0" name="UserDomains" nillable="true" type="tns:ArrayOfUserApplicationDomainData" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfUserApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserApplication" nillable="true" type="tns:UserApplication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserApplication" nillable="true" type="tns:ArrayOfUserApplication" />
+  <xs:complexType name="UserApplication">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Application" nillable="true" type="tns:Application" />
+          <xs:element minOccurs="0" name="Application_Id" type="ser:guid" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ExpireDate" type="q6:DateTimeOffset" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="LoginWithTocken" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Periodicitys" nillable="true" type="tns:ArrayOfPeriodicity" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserApplicationDomainDatas" nillable="true" type="tns:ArrayOfUserApplicationDomainData" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserApplication" nillable="true" type="tns:UserApplication" />
+  <xs:complexType name="ArrayOfPeriodicity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Periodicity" nillable="true" type="tns:Periodicity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPeriodicity" nillable="true" type="tns:ArrayOfPeriodicity" />
+  <xs:complexType name="Periodicity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DaysOfMount" type="xs:int" />
+          <xs:element minOccurs="0" name="DaysOfWeek" type="xs:int" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="EndDate" type="q7:DateTimeOffset" />
+          <xs:element minOccurs="0" name="From" type="ser:duration" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="StartDate" type="q8:DateTimeOffset" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="To" type="ser:duration" />
+          <xs:element minOccurs="0" name="Type" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="UserApplication" nillable="true" type="tns:UserApplication" />
+          <xs:element minOccurs="0" name="UserApplication_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Periodicity" nillable="true" type="tns:Periodicity" />
+  <xs:complexType name="ArrayOfUserDomainDataPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDomainDataPermission" nillable="true" type="tns:UserDomainDataPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDomainDataPermission" nillable="true" type="tns:ArrayOfUserDomainDataPermission" />
+  <xs:complexType name="UserDomainDataPermission">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainData" nillable="true" type="tns:DomainData" />
+          <xs:element minOccurs="0" name="DomainData_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Permission" nillable="true" type="tns:Permission" />
+          <xs:element minOccurs="0" name="Permission_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserApplicationDomainData" nillable="true" type="tns:UserApplicationDomainData" />
+          <xs:element minOccurs="0" name="UserApplicationDomainData_Id" type="xs:int" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserDomainDataPermission" nillable="true" type="tns:UserDomainDataPermission" />
+  <xs:complexType name="ArrayOfUserDomainDataRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDomainDataRole" nillable="true" type="tns:UserDomainDataRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDomainDataRole" nillable="true" type="tns:ArrayOfUserDomainDataRole" />
+  <xs:complexType name="UserDomainDataRole">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Base">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainData" nillable="true" type="tns:DomainData" />
+          <xs:element minOccurs="0" name="DomainData_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="Role_Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserApplicationDomainData" nillable="true" type="tns:UserApplicationDomainData" />
+          <xs:element minOccurs="0" name="UserApplicationDomainData_Id" type="xs:int" />
+          <xs:element minOccurs="0" name="User_Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserDomainDataRole" nillable="true" type="tns:UserDomainDataRole" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="ArrayOfApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Application" nillable="true" type="tns:Application" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplication" nillable="true" type="tns:ArrayOfApplication" />
+  <xs:complexType name="ArrayOfChannel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Channel" nillable="true" type="tns:Channel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChannel" nillable="true" type="tns:ArrayOfChannel" />
+</xs:schema>

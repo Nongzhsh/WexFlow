@@ -11,7 +11,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="2.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,12 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Wexflow.Tasks.AddEmploy\Wexflow.Tasks.AddEmploy.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.BankConfirm\Wexflow.Tasks.BankConfirm.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.CheckConditions\Wexflow.Tasks.CheckConditions.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.CheckForBeingNewMarketing\Wexflow.Tasks.CheckForBeingNewMarketing.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.Complete\Wexflow.Tasks.Complete.csproj" />
-    <ProjectReference Include="..\..\Wexflow.Tasks.ConfirmEmploy\Wexflow.Tasks.ConfirmEmploy.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.End\Wexflow.Tasks.End.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.InspectorConfirm\Wexflow.Tasks.InspectorConfirm.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.IsCurrentTerminalInstalled\Wexflow.Tasks.IsCurrentTerminalInstalled.csproj" />
@@ -33,15 +30,11 @@
     <ProjectReference Include="..\..\Wexflow.Tasks.NeedCheckByBank\Wexflow.Tasks.NeedCheckByBank.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.NeedExternalCall\Wexflow.Tasks.NeedExternalCall.csproj" />
     <ProjectReference Include="..\..\Wexflow.Tasks.NeedNewMarketing\Wexflow.Tasks.NeedNewMarketing.csproj" />
-    <ProjectReference Include="..\..\Wexflow.Tasks.View\Wexflow.Tasks.View.csproj" />
     <ProjectReference Include="..\Contract\Contract.csproj" />
     <ProjectReference Include="..\Wexflow.Core\Wexflow.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <!--<Reference Include="DataModel">
-      <HintPath>..\..\DataModel\bin\Debug\DataModel.dll</HintPath>
-    </Reference>-->
   </ItemGroup>
 
   <ItemGroup>

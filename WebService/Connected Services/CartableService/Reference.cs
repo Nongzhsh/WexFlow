@@ -17,9 +17,10 @@ namespace WebService.CartableService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseInput", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfCartableGtasGmS9))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOflong))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfCartableGtasGmS9))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl))]
     public partial class BaseInput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -95,6 +96,29 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseInputOfCartableGtasGmS9", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
+    [System.SerializableAttribute()]
+    public partial class BaseInputOfCartableGtasGmS9 : WebService.CartableService.BaseInput {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.Cartable ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.Cartable Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseInputOflong", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     public partial class BaseInputOflong : WebService.CartableService.BaseInput {
@@ -141,15 +165,47 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseInputOfCartableGtasGmS9", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BasePagingInputOfCartableValueaLASQhIl", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
-    public partial class BaseInputOfCartableGtasGmS9 : WebService.CartableService.BaseInput {
+    public partial class BasePagingInputOfCartableValueaLASQhIl : WebService.CartableService.BaseInput {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.Cartable ValueField;
+        private int CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageIndexField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.CartableValue ValueField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.Cartable Value {
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageIndex {
+            get {
+                return this.PageIndexField;
+            }
+            set {
+                if ((this.PageIndexField.Equals(value) != true)) {
+                    this.PageIndexField = value;
+                    this.RaisePropertyChanged("PageIndex");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.CartableValue Value {
             get {
                 return this.ValueField;
             }
@@ -158,6 +214,323 @@ namespace WebService.CartableService {
                     this.ValueField = value;
                     this.RaisePropertyChanged("Value");
                 }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartableValue", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable")]
+    [System.SerializableAttribute()]
+    public partial class CartableValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ActionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableFlowStatus> CartableFlowStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableOrderStatus> CartableOrderStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableStatus> CartableStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableType> CartableTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.CartableValue CartableValueHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CreationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> CreationIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreationNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> CurrentUserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrentUserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> FlowStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.RequestWorkflowValue RequestWorkflowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> SenderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SenderNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TaskStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ActionName {
+            get {
+                return this.ActionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ActionNameField, value) != true)) {
+                    this.ActionNameField = value;
+                    this.RaisePropertyChanged("ActionName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableFlowStatus> CartableFlowStatus {
+            get {
+                return this.CartableFlowStatusField;
+            }
+            set {
+                if ((this.CartableFlowStatusField.Equals(value) != true)) {
+                    this.CartableFlowStatusField = value;
+                    this.RaisePropertyChanged("CartableFlowStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableOrderStatus> CartableOrderStatus {
+            get {
+                return this.CartableOrderStatusField;
+            }
+            set {
+                if ((this.CartableOrderStatusField.Equals(value) != true)) {
+                    this.CartableOrderStatusField = value;
+                    this.RaisePropertyChanged("CartableOrderStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableStatus> CartableStatus {
+            get {
+                return this.CartableStatusField;
+            }
+            set {
+                if ((this.CartableStatusField.Equals(value) != true)) {
+                    this.CartableStatusField = value;
+                    this.RaisePropertyChanged("CartableStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableType> CartableType {
+            get {
+                return this.CartableTypeField;
+            }
+            set {
+                if ((this.CartableTypeField.Equals(value) != true)) {
+                    this.CartableTypeField = value;
+                    this.RaisePropertyChanged("CartableType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.CartableValue CartableValueHistory {
+            get {
+                return this.CartableValueHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CartableValueHistoryField, value) != true)) {
+                    this.CartableValueHistoryField = value;
+                    this.RaisePropertyChanged("CartableValueHistory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CreationDate {
+            get {
+                return this.CreationDateField;
+            }
+            set {
+                if ((this.CreationDateField.Equals(value) != true)) {
+                    this.CreationDateField = value;
+                    this.RaisePropertyChanged("CreationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> CreationID {
+            get {
+                return this.CreationIDField;
+            }
+            set {
+                if ((this.CreationIDField.Equals(value) != true)) {
+                    this.CreationIDField = value;
+                    this.RaisePropertyChanged("CreationID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreationName {
+            get {
+                return this.CreationNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreationNameField, value) != true)) {
+                    this.CreationNameField = value;
+                    this.RaisePropertyChanged("CreationName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> CurrentUserID {
+            get {
+                return this.CurrentUserIDField;
+            }
+            set {
+                if ((this.CurrentUserIDField.Equals(value) != true)) {
+                    this.CurrentUserIDField = value;
+                    this.RaisePropertyChanged("CurrentUserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrentUserName {
+            get {
+                return this.CurrentUserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentUserNameField, value) != true)) {
+                    this.CurrentUserNameField = value;
+                    this.RaisePropertyChanged("CurrentUserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> FlowStatus {
+            get {
+                return this.FlowStatusField;
+            }
+            set {
+                if ((this.FlowStatusField.Equals(value) != true)) {
+                    this.FlowStatusField = value;
+                    this.RaisePropertyChanged("FlowStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.RequestWorkflowValue RequestWorkflow {
+            get {
+                return this.RequestWorkflowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestWorkflowField, value) != true)) {
+                    this.RequestWorkflowField = value;
+                    this.RaisePropertyChanged("RequestWorkflow");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> SenderID {
+            get {
+                return this.SenderIDField;
+            }
+            set {
+                if ((this.SenderIDField.Equals(value) != true)) {
+                    this.SenderIDField = value;
+                    this.RaisePropertyChanged("SenderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SenderName {
+            get {
+                return this.SenderNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SenderNameField, value) != true)) {
+                    this.SenderNameField = value;
+                    this.RaisePropertyChanged("SenderName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TaskStatus {
+            get {
+                return this.TaskStatusField;
+            }
+            set {
+                if ((this.TaskStatusField.Equals(value) != true)) {
+                    this.TaskStatusField = value;
+                    this.RaisePropertyChanged("TaskStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -181,163 +554,6 @@ namespace WebService.CartableService {
                     this.ID1Field = value;
                     this.RaisePropertyChanged("ID1");
                 }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RequestWorkflow", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model")]
-    [System.SerializableAttribute()]
-    public partial class RequestWorkflow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> AcceptorIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long CancellationReasonIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.Cartable CartableField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> FileRequestIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RequestNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> RequestStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> TerminalIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> AcceptorID {
-            get {
-                return this.AcceptorIDField;
-            }
-            set {
-                if ((this.AcceptorIDField.Equals(value) != true)) {
-                    this.AcceptorIDField = value;
-                    this.RaisePropertyChanged("AcceptorID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long CancellationReasonID {
-            get {
-                return this.CancellationReasonIDField;
-            }
-            set {
-                if ((this.CancellationReasonIDField.Equals(value) != true)) {
-                    this.CancellationReasonIDField = value;
-                    this.RaisePropertyChanged("CancellationReasonID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.Cartable Cartable {
-            get {
-                return this.CartableField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CartableField, value) != true)) {
-                    this.CartableField = value;
-                    this.RaisePropertyChanged("Cartable");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> FileRequestID {
-            get {
-                return this.FileRequestIDField;
-            }
-            set {
-                if ((this.FileRequestIDField.Equals(value) != true)) {
-                    this.FileRequestIDField = value;
-                    this.RaisePropertyChanged("FileRequestID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RequestNumber {
-            get {
-                return this.RequestNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestNumberField, value) != true)) {
-                    this.RequestNumberField = value;
-                    this.RaisePropertyChanged("RequestNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> RequestStatus {
-            get {
-                return this.RequestStatusField;
-            }
-            set {
-                if ((this.RequestStatusField.Equals(value) != true)) {
-                    this.RequestStatusField = value;
-                    this.RaisePropertyChanged("RequestStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> TerminalID {
-            get {
-                return this.TerminalIDField;
-            }
-            set {
-                if ((this.TerminalIDField.Equals(value) != true)) {
-                    this.TerminalIDField = value;
-                    this.RaisePropertyChanged("TerminalID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -413,6 +629,9 @@ namespace WebService.CartableService {
     public partial class BaseCartable : WebService.CartableService.BaseEntity {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ActionNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long CurrentUserIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -423,6 +642,9 @@ namespace WebService.CartableService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int FlowStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> FlowStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long IDField;
@@ -450,6 +672,19 @@ namespace WebService.CartableService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<long> durationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ActionName {
+            get {
+                return this.ActionNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ActionNameField, value) != true)) {
+                    this.ActionNameField = value;
+                    this.RaisePropertyChanged("ActionName");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public long CurrentUserID {
@@ -499,6 +734,19 @@ namespace WebService.CartableService {
                 if ((this.FlowStateField.Equals(value) != true)) {
                     this.FlowStateField = value;
                     this.RaisePropertyChanged("FlowState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> FlowStatus {
+            get {
+                return this.FlowStatusField;
+            }
+            set {
+                if ((this.FlowStatusField.Equals(value) != true)) {
+                    this.FlowStatusField = value;
+                    this.RaisePropertyChanged("FlowStatus");
                 }
             }
         }
@@ -623,6 +871,388 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RequestWorkflow", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model")]
+    [System.SerializableAttribute()]
+    public partial class RequestWorkflow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> AcceptorIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long CancellationReasonIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.Cartable CartableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> FileRequestIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long InsertByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RequestNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> RequestStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> TerminalIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> AcceptorID {
+            get {
+                return this.AcceptorIDField;
+            }
+            set {
+                if ((this.AcceptorIDField.Equals(value) != true)) {
+                    this.AcceptorIDField = value;
+                    this.RaisePropertyChanged("AcceptorID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long CancellationReasonID {
+            get {
+                return this.CancellationReasonIDField;
+            }
+            set {
+                if ((this.CancellationReasonIDField.Equals(value) != true)) {
+                    this.CancellationReasonIDField = value;
+                    this.RaisePropertyChanged("CancellationReasonID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.Cartable Cartable {
+            get {
+                return this.CartableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CartableField, value) != true)) {
+                    this.CartableField = value;
+                    this.RaisePropertyChanged("Cartable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> FileRequestID {
+            get {
+                return this.FileRequestIDField;
+            }
+            set {
+                if ((this.FileRequestIDField.Equals(value) != true)) {
+                    this.FileRequestIDField = value;
+                    this.RaisePropertyChanged("FileRequestID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long InsertBy {
+            get {
+                return this.InsertByField;
+            }
+            set {
+                if ((this.InsertByField.Equals(value) != true)) {
+                    this.InsertByField = value;
+                    this.RaisePropertyChanged("InsertBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RequestNumber {
+            get {
+                return this.RequestNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestNumberField, value) != true)) {
+                    this.RequestNumberField = value;
+                    this.RaisePropertyChanged("RequestNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> RequestStatus {
+            get {
+                return this.RequestStatusField;
+            }
+            set {
+                if ((this.RequestStatusField.Equals(value) != true)) {
+                    this.RequestStatusField = value;
+                    this.RaisePropertyChanged("RequestStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> TerminalID {
+            get {
+                return this.TerminalIDField;
+            }
+            set {
+                if ((this.TerminalIDField.Equals(value) != true)) {
+                    this.TerminalIDField = value;
+                    this.RaisePropertyChanged("TerminalID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RequestWorkflowValue", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable")]
+    [System.SerializableAttribute()]
+    public partial class RequestWorkflowValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> AcceptorIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AcceptorNOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> FileRequestIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RequestNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> TerminalIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TerminalNOField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> AcceptorID {
+            get {
+                return this.AcceptorIDField;
+            }
+            set {
+                if ((this.AcceptorIDField.Equals(value) != true)) {
+                    this.AcceptorIDField = value;
+                    this.RaisePropertyChanged("AcceptorID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AcceptorNO {
+            get {
+                return this.AcceptorNOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AcceptorNOField, value) != true)) {
+                    this.AcceptorNOField = value;
+                    this.RaisePropertyChanged("AcceptorNO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> FileRequestID {
+            get {
+                return this.FileRequestIDField;
+            }
+            set {
+                if ((this.FileRequestIDField.Equals(value) != true)) {
+                    this.FileRequestIDField = value;
+                    this.RaisePropertyChanged("FileRequestID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RequestNumber {
+            get {
+                return this.RequestNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestNumberField, value) != true)) {
+                    this.RequestNumberField = value;
+                    this.RaisePropertyChanged("RequestNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> TerminalID {
+            get {
+                return this.TerminalIDField;
+            }
+            set {
+                if ((this.TerminalIDField.Equals(value) != true)) {
+                    this.TerminalIDField = value;
+                    this.RaisePropertyChanged("TerminalID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TerminalNO {
+            get {
+                return this.TerminalNOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TerminalNOField, value) != true)) {
+                    this.TerminalNOField = value;
+                    this.RaisePropertyChanged("TerminalNO");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartableFlowStatus", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
+    public enum CartableFlowStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Approve = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Reject = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Send = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartableOrderStatus", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
+    public enum CartableOrderStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Normal = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PreCrisis = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Crisis = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Force = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartableStatus", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
+    public enum CartableStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Viewed = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unseen = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Done = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        End = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabled = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartableType", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
+    public enum CartableType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cancelation = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Assingment = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ChangeAccount = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Marketing = 3,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BasePagingResultOfArrayOfCartableValueaLASQhIl", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     public partial class BasePagingResultOfArrayOfCartableValueaLASQhIl : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -716,454 +1346,10 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CartableValue", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable")]
-    [System.SerializableAttribute()]
-    public partial class CartableValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.CartableFlowStatus CartableFlowStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.CartableStatus CartableStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.CartableType CartableTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreationDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long CreationIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreationNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long CurrentUserIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CurrentUserNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.RequestWorkflowValue RequestWorkflowField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long SenderIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SenderNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.CartableFlowStatus CartableFlowStatus {
-            get {
-                return this.CartableFlowStatusField;
-            }
-            set {
-                if ((this.CartableFlowStatusField.Equals(value) != true)) {
-                    this.CartableFlowStatusField = value;
-                    this.RaisePropertyChanged("CartableFlowStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.CartableStatus CartableStatus {
-            get {
-                return this.CartableStatusField;
-            }
-            set {
-                if ((this.CartableStatusField.Equals(value) != true)) {
-                    this.CartableStatusField = value;
-                    this.RaisePropertyChanged("CartableStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.CartableType CartableType {
-            get {
-                return this.CartableTypeField;
-            }
-            set {
-                if ((this.CartableTypeField.Equals(value) != true)) {
-                    this.CartableTypeField = value;
-                    this.RaisePropertyChanged("CartableType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreationDate {
-            get {
-                return this.CreationDateField;
-            }
-            set {
-                if ((this.CreationDateField.Equals(value) != true)) {
-                    this.CreationDateField = value;
-                    this.RaisePropertyChanged("CreationDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long CreationID {
-            get {
-                return this.CreationIDField;
-            }
-            set {
-                if ((this.CreationIDField.Equals(value) != true)) {
-                    this.CreationIDField = value;
-                    this.RaisePropertyChanged("CreationID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreationName {
-            get {
-                return this.CreationNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreationNameField, value) != true)) {
-                    this.CreationNameField = value;
-                    this.RaisePropertyChanged("CreationName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long CurrentUserID {
-            get {
-                return this.CurrentUserIDField;
-            }
-            set {
-                if ((this.CurrentUserIDField.Equals(value) != true)) {
-                    this.CurrentUserIDField = value;
-                    this.RaisePropertyChanged("CurrentUserID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CurrentUserName {
-            get {
-                return this.CurrentUserNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentUserNameField, value) != true)) {
-                    this.CurrentUserNameField = value;
-                    this.RaisePropertyChanged("CurrentUserName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.RequestWorkflowValue RequestWorkflow {
-            get {
-                return this.RequestWorkflowField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestWorkflowField, value) != true)) {
-                    this.RequestWorkflowField = value;
-                    this.RaisePropertyChanged("RequestWorkflow");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long SenderID {
-            get {
-                return this.SenderIDField;
-            }
-            set {
-                if ((this.SenderIDField.Equals(value) != true)) {
-                    this.SenderIDField = value;
-                    this.RaisePropertyChanged("SenderID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SenderName {
-            get {
-                return this.SenderNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SenderNameField, value) != true)) {
-                    this.SenderNameField = value;
-                    this.RaisePropertyChanged("SenderName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RequestWorkflowValue", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable")]
-    [System.SerializableAttribute()]
-    public partial class RequestWorkflowValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long AcceptorIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AcceptorNOField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CartableTypeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long FileRequestIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RequestNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long TerminalIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TerminalNOField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long AcceptorID {
-            get {
-                return this.AcceptorIDField;
-            }
-            set {
-                if ((this.AcceptorIDField.Equals(value) != true)) {
-                    this.AcceptorIDField = value;
-                    this.RaisePropertyChanged("AcceptorID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AcceptorNO {
-            get {
-                return this.AcceptorNOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AcceptorNOField, value) != true)) {
-                    this.AcceptorNOField = value;
-                    this.RaisePropertyChanged("AcceptorNO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CartableTypeID {
-            get {
-                return this.CartableTypeIDField;
-            }
-            set {
-                if ((this.CartableTypeIDField.Equals(value) != true)) {
-                    this.CartableTypeIDField = value;
-                    this.RaisePropertyChanged("CartableTypeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long FileRequestID {
-            get {
-                return this.FileRequestIDField;
-            }
-            set {
-                if ((this.FileRequestIDField.Equals(value) != true)) {
-                    this.FileRequestIDField = value;
-                    this.RaisePropertyChanged("FileRequestID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RequestNumber {
-            get {
-                return this.RequestNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestNumberField, value) != true)) {
-                    this.RequestNumberField = value;
-                    this.RaisePropertyChanged("RequestNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long TerminalID {
-            get {
-                return this.TerminalIDField;
-            }
-            set {
-                if ((this.TerminalIDField.Equals(value) != true)) {
-                    this.TerminalIDField = value;
-                    this.RaisePropertyChanged("TerminalID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TerminalNO {
-            get {
-                return this.TerminalNOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TerminalNOField, value) != true)) {
-                    this.TerminalNOField = value;
-                    this.RaisePropertyChanged("TerminalNO");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CartableFlowStatus", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
-    public enum CartableFlowStatus : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Approve = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Reject = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Send = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CartableStatus", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
-    public enum CartableStatus : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Viewed = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unseen = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Done = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        End = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disabled = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CartableType", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
-    public enum CartableType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Cancelation = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assingment = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ChangeAccount = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Marketing = 3,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResult", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfint))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfboolean))]
     public partial class BaseResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1247,6 +1433,29 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResultOfint", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
+    [System.SerializableAttribute()]
+    public partial class BaseResultOfint : WebService.CartableService.BaseResult {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResultOfboolean", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     public partial class BaseResultOfboolean : WebService.CartableService.BaseResult {
@@ -1295,6 +1504,9 @@ namespace WebService.CartableService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/DeleteRequest", ReplyAction="http://tempuri.org/ICartableService/DeleteRequestResponse")]
         WebService.CartableService.DeleteRequestResponse DeleteRequest(WebService.CartableService.DeleteRequestRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/CheckConfirmRequest", ReplyAction="http://tempuri.org/ICartableService/CheckConfirmRequestResponse")]
+        WebService.CartableService.CheckConfirmRequestResponse CheckConfirmRequest(WebService.CartableService.CheckConfirmRequestRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1303,17 +1515,25 @@ namespace WebService.CartableService {
     public partial class FindAllCartableRecordRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOfCartableGtasGmS9 whereClause;
+        public WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl whereClause;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
         public System.Collections.Generic.List<long> employeeIDList;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public bool isFollowup;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public bool fillRequestObject;
+        
         public FindAllCartableRecordRequest() {
         }
         
-        public FindAllCartableRecordRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 whereClause, System.Collections.Generic.List<long> employeeIDList) {
+        public FindAllCartableRecordRequest(WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl whereClause, System.Collections.Generic.List<long> employeeIDList, bool isFollowup, bool fillRequestObject) {
             this.whereClause = whereClause;
             this.employeeIDList = employeeIDList;
+            this.isFollowup = isFollowup;
+            this.fillRequestObject = fillRequestObject;
         }
     }
     
@@ -1342,13 +1562,17 @@ namespace WebService.CartableService {
         public WebService.CartableService.BaseInputOfCartableGtasGmS9 task;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public long requestID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
         public long employeeID;
         
         public InsertTaskRequest() {
         }
         
-        public InsertTaskRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long employeeID) {
+        public InsertTaskRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long requestID, long employeeID) {
             this.task = task;
+            this.requestID = requestID;
             this.employeeID = employeeID;
         }
     }
@@ -1449,11 +1673,15 @@ namespace WebService.CartableService {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
         public WebService.CartableService.BaseInputOfCartableGtasGmS9 task;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public long requestID;
+        
         public ForwardTaskRequest() {
         }
         
-        public ForwardTaskRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task) {
+        public ForwardTaskRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long requestID) {
             this.task = task;
+            this.requestID = requestID;
         }
     }
     
@@ -1585,6 +1813,38 @@ namespace WebService.CartableService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CheckConfirmRequest", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CheckConfirmRequestRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WebService.CartableService.BaseInputOflong requestID;
+        
+        public CheckConfirmRequestRequest() {
+        }
+        
+        public CheckConfirmRequestRequest(WebService.CartableService.BaseInputOflong requestID) {
+            this.requestID = requestID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CheckConfirmRequestResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CheckConfirmRequestResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WebService.CartableService.BaseResultOfint CheckConfirmRequestResult;
+        
+        public CheckConfirmRequestResponse() {
+        }
+        
+        public CheckConfirmRequestResponse(WebService.CartableService.BaseResultOfint CheckConfirmRequestResult) {
+            this.CheckConfirmRequestResult = CheckConfirmRequestResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ICartableServiceChannel : WebService.CartableService.ICartableService, System.ServiceModel.IClientChannel {
     }
@@ -1642,6 +1902,10 @@ namespace WebService.CartableService {
         
         public WebService.CartableService.DeleteRequestResponse DeleteRequest(WebService.CartableService.DeleteRequestRequest request) {
             return base.Channel.DeleteRequest(request);
+        }
+        
+        public WebService.CartableService.CheckConfirmRequestResponse CheckConfirmRequest(WebService.CartableService.CheckConfirmRequestRequest request) {
+            return base.Channel.CheckConfirmRequest(request);
         }
     }
 }

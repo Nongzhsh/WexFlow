@@ -893,7 +893,7 @@ namespace Wexflow.Core
                 {
                     while (true)
                     {
-                        var status = whileTask.Run();
+                        var status = whileTask.Run(model);
 
                         success &= status.Status == Status.Success;
                         warning |= status.Status == Status.Warning;
@@ -923,7 +923,7 @@ namespace Wexflow.Core
 
                     if (childNode != null)
                     {
-                        RunTasks(tasks, nodes, childNode, ref success, ref warning, ref atLeastOneSucceed);
+                        RunTasks(tasks, nodes, childNode, ref success, ref warning, ref atLeastOneSucceed,model);
                     }
                 }
             }

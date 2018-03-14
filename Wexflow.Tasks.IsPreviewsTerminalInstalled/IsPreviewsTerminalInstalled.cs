@@ -1,10 +1,9 @@
 ﻿using Contract;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Xml.Linq;
+using WebService;
 using Wexflow.Core;
 
 namespace Wexflow.Tasks.IsPreviewsTerminalInstalled
@@ -28,22 +27,29 @@ namespace Wexflow.Tasks.IsPreviewsTerminalInstalled
 
         public override TaskStatus Run(RequestModel model = null)
         {
-            var serviceResult = true;
+            var taskID = GetTaskInfo.GetTaskId(GetType().Name);
+            var taskDescription = GetTaskInfo.GetTaskDescriotion(GetType().Name);
+            var innerRequestModel = JsonConvert.DeserializeObject<InnerRequestModel>(model.TaskModel);
+            var currentUserID = _userId;
+            new ServiceProxy().ForwardService(
+                innerRequestModel.RequestID,
+                currentUserID,
+                model.Id,
+                taskID,
+                taskDescription,
+                innerRequestModel.RequestID);
             var now = DateTime.Now;
-
             while (true)
             {
-                if (serviceResult)
+                var serviceResult = new ServiceProxy().CheckConfirm(innerRequestModel.RequestID);
+                if (serviceResult == 1)
                 {
-                    // تایید ابطال
-                    // IsNewMarketing
                     return new TaskStatus(Status.Success, true);
                 }
-                else
+                else if (serviceResult == 0)
                 {
                     if (now + _callTime >= DateTime.Now)
                     {
-                        // IsCurrentTerminalInstalled
                         return new TaskStatus(Status.Error, false);
                     }
                 }

@@ -89,6 +89,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\CartableService\CartableService.wsdl" />
+    <None Include="Connected Services\CartableService\WebService.CartableService.CheckConfirmRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CartableService\WebService.CartableService.DeleteRequestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
