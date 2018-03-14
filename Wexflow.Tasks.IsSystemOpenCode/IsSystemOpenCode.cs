@@ -58,5 +58,11 @@ namespace Wexflow.Tasks.IsSystemOpenCode
                 Thread.Sleep(_interval);
             }
         }
+
+        public class InnerRequestModel
+        {
+            public long EmployeeID { get; set; }
+            public long RequestID { get; set; }
+        }
     }
 }

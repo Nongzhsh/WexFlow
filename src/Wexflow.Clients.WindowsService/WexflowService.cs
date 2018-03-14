@@ -539,7 +539,7 @@ namespace Wexflow.Clients.WindowsService
             StreamReader reader = new StreamReader(streamdata);
             string json = reader.ReadToEnd();
             var model = JsonConvert.DeserializeObject<RequestModel>(json);
-            WexflowWindowsService.WexflowEngine.StartWorkflow(model.Id);
+            WexflowWindowsService.WexflowEngine.StartWorkflowModel(model);
         }
     }
 }
