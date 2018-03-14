@@ -4,26 +4,38 @@
   <xs:complexType name="CartableValue">
     <xs:sequence>
       <xs:element minOccurs="0" name="ActionName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="CartableFlowStatus" nillable="true" type="q1:CartableFlowStatus" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="CartableOrderStatus" nillable="true" type="q2:CartableOrderStatus" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="CartableStatus" nillable="true" type="q3:CartableStatus" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="CartableType" nillable="true" type="q4:CartableType" />
-      <xs:element minOccurs="0" name="CartableValueHistory" nillable="true" type="tns:CartableValue" />
-      <xs:element minOccurs="0" name="CreationDate" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="CreationID" nillable="true" type="xs:long" />
-      <xs:element minOccurs="0" name="CreationName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CurrentUserID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CartableValueHistory" nillable="true" type="tns:ArrayOfCartableValue" />
+      <xs:element minOccurs="0" name="CurrentUserID" type="xs:long" />
       <xs:element minOccurs="0" name="CurrentUserName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FlowStatus" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="FlowID" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="FlowState" nillable="true" type="q1:CartableFlowState" />
+      <xs:element minOccurs="0" name="FlowStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="InsertBy" type="xs:long" />
+      <xs:element minOccurs="0" name="InsertByName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsertDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsForce" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifyDate" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="OrderStatus" nillable="true" type="q2:CartableOrderStatus" />
+      <xs:element minOccurs="0" name="RejectReasonID" type="xs:int" />
       <xs:element minOccurs="0" name="RequestWorkflow" nillable="true" type="tns:RequestWorkflowValue" />
-      <xs:element minOccurs="0" name="SenderID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SenderID" type="xs:long" />
       <xs:element minOccurs="0" name="SenderName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TaskStatus" nillable="true" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="Status" nillable="true" type="q3:CartableStatus" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:long" />
+      <xs:element minOccurs="0" name="TaskStatus" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" minOccurs="0" name="Type" nillable="true" type="q4:CartableType" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CartableValue" nillable="true" type="tns:CartableValue" />
+  <xs:complexType name="ArrayOfCartableValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartableValue" nillable="true" type="tns:CartableValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCartableValue" nillable="true" type="tns:ArrayOfCartableValue" />
   <xs:complexType name="RequestWorkflowValue">
     <xs:sequence>
       <xs:element minOccurs="0" name="AcceptorID" nillable="true" type="xs:long" />
@@ -36,10 +48,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RequestWorkflowValue" nillable="true" type="tns:RequestWorkflowValue" />
-  <xs:complexType name="ArrayOfCartableValue">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CartableValue" nillable="true" type="tns:CartableValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCartableValue" nillable="true" type="tns:ArrayOfCartableValue" />
 </xs:schema>

@@ -19,7 +19,9 @@ namespace WebService.CartableService {
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfCartableGtasGmS9))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOflong))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfCartableValueaLASQhIl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseInputOfArrayOfCartableValueaLASQhIl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl))]
     public partial class BaseInput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -142,6 +144,29 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseInputOfCartableValueaLASQhIl", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
+    [System.SerializableAttribute()]
+    public partial class BaseInputOfCartableValueaLASQhIl : WebService.CartableService.BaseInput {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.CartableValue ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.CartableValue Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseInputOfRequestWorkflowGtasGmS9", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     public partial class BaseInputOfRequestWorkflowGtasGmS9 : WebService.CartableService.BaseInput {
@@ -151,6 +176,29 @@ namespace WebService.CartableService {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public WebService.CartableService.RequestWorkflow Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseInputOfArrayOfCartableValueaLASQhIl", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
+    [System.SerializableAttribute()]
+    public partial class BaseInputOfArrayOfCartableValueaLASQhIl : WebService.CartableService.BaseInput {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.CartableValue[] ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.CartableValue[] Value {
             get {
                 return this.ValueField;
             }
@@ -231,31 +279,10 @@ namespace WebService.CartableService {
         private string ActionNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<WebService.CartableService.CartableFlowStatus> CartableFlowStatusField;
+        private WebService.CartableService.CartableValue[] CartableValueHistoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<WebService.CartableService.CartableOrderStatus> CartableOrderStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<WebService.CartableService.CartableStatus> CartableStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<WebService.CartableService.CartableType> CartableTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.CartableValue CartableValueHistoryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> CreationDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> CreationIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreationNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> CurrentUserIDField;
+        private long CurrentUserIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CurrentUserNameField;
@@ -264,22 +291,61 @@ namespace WebService.CartableService {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> FlowStatusField;
+        private int DurationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> IDField;
+        private long FlowIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableFlowState> FlowStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlowStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long InsertByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InsertByNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime InsertDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsForceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastModifyDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableOrderStatus> OrderStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RejectReasonIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WebService.CartableService.RequestWorkflowValue RequestWorkflowField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> SenderIDField;
+        private long SenderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SenderNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> TaskStatusField;
+        private System.Nullable<WebService.CartableService.CartableStatus> StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long TaskIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TaskStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<WebService.CartableService.CartableType> TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -305,59 +371,7 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<WebService.CartableService.CartableFlowStatus> CartableFlowStatus {
-            get {
-                return this.CartableFlowStatusField;
-            }
-            set {
-                if ((this.CartableFlowStatusField.Equals(value) != true)) {
-                    this.CartableFlowStatusField = value;
-                    this.RaisePropertyChanged("CartableFlowStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<WebService.CartableService.CartableOrderStatus> CartableOrderStatus {
-            get {
-                return this.CartableOrderStatusField;
-            }
-            set {
-                if ((this.CartableOrderStatusField.Equals(value) != true)) {
-                    this.CartableOrderStatusField = value;
-                    this.RaisePropertyChanged("CartableOrderStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<WebService.CartableService.CartableStatus> CartableStatus {
-            get {
-                return this.CartableStatusField;
-            }
-            set {
-                if ((this.CartableStatusField.Equals(value) != true)) {
-                    this.CartableStatusField = value;
-                    this.RaisePropertyChanged("CartableStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<WebService.CartableService.CartableType> CartableType {
-            get {
-                return this.CartableTypeField;
-            }
-            set {
-                if ((this.CartableTypeField.Equals(value) != true)) {
-                    this.CartableTypeField = value;
-                    this.RaisePropertyChanged("CartableType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.CartableValue CartableValueHistory {
+        public WebService.CartableService.CartableValue[] CartableValueHistory {
             get {
                 return this.CartableValueHistoryField;
             }
@@ -370,46 +384,7 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CreationDate {
-            get {
-                return this.CreationDateField;
-            }
-            set {
-                if ((this.CreationDateField.Equals(value) != true)) {
-                    this.CreationDateField = value;
-                    this.RaisePropertyChanged("CreationDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> CreationID {
-            get {
-                return this.CreationIDField;
-            }
-            set {
-                if ((this.CreationIDField.Equals(value) != true)) {
-                    this.CreationIDField = value;
-                    this.RaisePropertyChanged("CreationID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreationName {
-            get {
-                return this.CreationNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreationNameField, value) != true)) {
-                    this.CreationNameField = value;
-                    this.RaisePropertyChanged("CreationName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> CurrentUserID {
+        public long CurrentUserID {
             get {
                 return this.CurrentUserIDField;
             }
@@ -448,7 +423,46 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> FlowStatus {
+        public int Duration {
+            get {
+                return this.DurationField;
+            }
+            set {
+                if ((this.DurationField.Equals(value) != true)) {
+                    this.DurationField = value;
+                    this.RaisePropertyChanged("Duration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long FlowID {
+            get {
+                return this.FlowIDField;
+            }
+            set {
+                if ((this.FlowIDField.Equals(value) != true)) {
+                    this.FlowIDField = value;
+                    this.RaisePropertyChanged("FlowID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableFlowState> FlowState {
+            get {
+                return this.FlowStateField;
+            }
+            set {
+                if ((this.FlowStateField.Equals(value) != true)) {
+                    this.FlowStateField = value;
+                    this.RaisePropertyChanged("FlowState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlowStatus {
             get {
                 return this.FlowStatusField;
             }
@@ -461,7 +475,7 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> ID {
+        public long ID {
             get {
                 return this.IDField;
             }
@@ -469,6 +483,97 @@ namespace WebService.CartableService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long InsertBy {
+            get {
+                return this.InsertByField;
+            }
+            set {
+                if ((this.InsertByField.Equals(value) != true)) {
+                    this.InsertByField = value;
+                    this.RaisePropertyChanged("InsertBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InsertByName {
+            get {
+                return this.InsertByNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InsertByNameField, value) != true)) {
+                    this.InsertByNameField = value;
+                    this.RaisePropertyChanged("InsertByName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime InsertDate {
+            get {
+                return this.InsertDateField;
+            }
+            set {
+                if ((this.InsertDateField.Equals(value) != true)) {
+                    this.InsertDateField = value;
+                    this.RaisePropertyChanged("InsertDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsForce {
+            get {
+                return this.IsForceField;
+            }
+            set {
+                if ((this.IsForceField.Equals(value) != true)) {
+                    this.IsForceField = value;
+                    this.RaisePropertyChanged("IsForce");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastModifyDate {
+            get {
+                return this.LastModifyDateField;
+            }
+            set {
+                if ((this.LastModifyDateField.Equals(value) != true)) {
+                    this.LastModifyDateField = value;
+                    this.RaisePropertyChanged("LastModifyDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableOrderStatus> OrderStatus {
+            get {
+                return this.OrderStatusField;
+            }
+            set {
+                if ((this.OrderStatusField.Equals(value) != true)) {
+                    this.OrderStatusField = value;
+                    this.RaisePropertyChanged("OrderStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RejectReasonID {
+            get {
+                return this.RejectReasonIDField;
+            }
+            set {
+                if ((this.RejectReasonIDField.Equals(value) != true)) {
+                    this.RejectReasonIDField = value;
+                    this.RaisePropertyChanged("RejectReasonID");
                 }
             }
         }
@@ -487,7 +592,7 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> SenderID {
+        public long SenderID {
             get {
                 return this.SenderIDField;
             }
@@ -513,7 +618,33 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> TaskStatus {
+        public System.Nullable<WebService.CartableService.CartableStatus> Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long TaskID {
+            get {
+                return this.TaskIDField;
+            }
+            set {
+                if ((this.TaskIDField.Equals(value) != true)) {
+                    this.TaskIDField = value;
+                    this.RaisePropertyChanged("TaskID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TaskStatus {
             get {
                 return this.TaskStatusField;
             }
@@ -521,6 +652,19 @@ namespace WebService.CartableService {
                 if ((this.TaskStatusField.Equals(value) != true)) {
                     this.TaskStatusField = value;
                     this.RaisePropertyChanged("TaskStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<WebService.CartableService.CartableType> Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((this.TypeField.Equals(value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
                 }
             }
         }
@@ -654,6 +798,12 @@ namespace WebService.CartableService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long ObjectIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> RejectReasonIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long SenderIDField;
@@ -791,6 +941,32 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderStatus {
+            get {
+                return this.OrderStatusField;
+            }
+            set {
+                if ((this.OrderStatusField.Equals(value) != true)) {
+                    this.OrderStatusField = value;
+                    this.RaisePropertyChanged("OrderStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> RejectReasonID {
+            get {
+                return this.RejectReasonIDField;
+            }
+            set {
+                if ((this.RejectReasonIDField.Equals(value) != true)) {
+                    this.RejectReasonIDField = value;
+                    this.RaisePropertyChanged("RejectReasonID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public long SenderID {
             get {
                 return this.SenderIDField;
@@ -865,179 +1041,6 @@ namespace WebService.CartableService {
                     this.durationField = value;
                     this.RaisePropertyChanged("duration");
                 }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RequestWorkflow", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model")]
-    [System.SerializableAttribute()]
-    public partial class RequestWorkflow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> AcceptorIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long CancellationReasonIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebService.CartableService.Cartable CartableField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> FileRequestIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long InsertByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RequestNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> RequestStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> TerminalIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> AcceptorID {
-            get {
-                return this.AcceptorIDField;
-            }
-            set {
-                if ((this.AcceptorIDField.Equals(value) != true)) {
-                    this.AcceptorIDField = value;
-                    this.RaisePropertyChanged("AcceptorID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long CancellationReasonID {
-            get {
-                return this.CancellationReasonIDField;
-            }
-            set {
-                if ((this.CancellationReasonIDField.Equals(value) != true)) {
-                    this.CancellationReasonIDField = value;
-                    this.RaisePropertyChanged("CancellationReasonID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebService.CartableService.Cartable Cartable {
-            get {
-                return this.CartableField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CartableField, value) != true)) {
-                    this.CartableField = value;
-                    this.RaisePropertyChanged("Cartable");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> FileRequestID {
-            get {
-                return this.FileRequestIDField;
-            }
-            set {
-                if ((this.FileRequestIDField.Equals(value) != true)) {
-                    this.FileRequestIDField = value;
-                    this.RaisePropertyChanged("FileRequestID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long InsertBy {
-            get {
-                return this.InsertByField;
-            }
-            set {
-                if ((this.InsertByField.Equals(value) != true)) {
-                    this.InsertByField = value;
-                    this.RaisePropertyChanged("InsertBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RequestNumber {
-            get {
-                return this.RequestNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestNumberField, value) != true)) {
-                    this.RequestNumberField = value;
-                    this.RaisePropertyChanged("RequestNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> RequestStatus {
-            get {
-                return this.RequestStatusField;
-            }
-            set {
-                if ((this.RequestStatusField.Equals(value) != true)) {
-                    this.RequestStatusField = value;
-                    this.RaisePropertyChanged("RequestStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> TerminalID {
-            get {
-                return this.TerminalIDField;
-            }
-            set {
-                if ((this.TerminalIDField.Equals(value) != true)) {
-                    this.TerminalIDField = value;
-                    this.RaisePropertyChanged("TerminalID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1184,17 +1187,20 @@ namespace WebService.CartableService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CartableFlowStatus", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
-    public enum CartableFlowStatus : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="CartableFlowState", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum")]
+    public enum CartableFlowState : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Approve = 0,
+        Nothing = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Reject = 1,
+        Approve = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Send = 2,
+        Reject = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Send = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -1209,9 +1215,6 @@ namespace WebService.CartableService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Crisis = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Force = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -1219,19 +1222,19 @@ namespace WebService.CartableService {
     public enum CartableStatus : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Viewed = 0,
+        Viewed = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unseen = 1,
+        Unseen = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Done = 2,
+        Done = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        End = 3,
+        End = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disabled = 4,
+        Disabled = 5,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -1253,6 +1256,179 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RequestWorkflow", Namespace="http://schemas.datacontract.org/2004/07/MMS.Model")]
+    [System.SerializableAttribute()]
+    public partial class RequestWorkflow : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> AcceptorIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long CancellationReasonIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebService.CartableService.Cartable CartableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> FileRequestIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long InsertByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsForceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RequestNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> TerminalIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> AcceptorID {
+            get {
+                return this.AcceptorIDField;
+            }
+            set {
+                if ((this.AcceptorIDField.Equals(value) != true)) {
+                    this.AcceptorIDField = value;
+                    this.RaisePropertyChanged("AcceptorID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long CancellationReasonID {
+            get {
+                return this.CancellationReasonIDField;
+            }
+            set {
+                if ((this.CancellationReasonIDField.Equals(value) != true)) {
+                    this.CancellationReasonIDField = value;
+                    this.RaisePropertyChanged("CancellationReasonID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebService.CartableService.Cartable Cartable {
+            get {
+                return this.CartableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CartableField, value) != true)) {
+                    this.CartableField = value;
+                    this.RaisePropertyChanged("Cartable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> FileRequestID {
+            get {
+                return this.FileRequestIDField;
+            }
+            set {
+                if ((this.FileRequestIDField.Equals(value) != true)) {
+                    this.FileRequestIDField = value;
+                    this.RaisePropertyChanged("FileRequestID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long InsertBy {
+            get {
+                return this.InsertByField;
+            }
+            set {
+                if ((this.InsertByField.Equals(value) != true)) {
+                    this.InsertByField = value;
+                    this.RaisePropertyChanged("InsertBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsForce {
+            get {
+                return this.IsForceField;
+            }
+            set {
+                if ((this.IsForceField.Equals(value) != true)) {
+                    this.IsForceField = value;
+                    this.RaisePropertyChanged("IsForce");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RequestNumber {
+            get {
+                return this.RequestNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestNumberField, value) != true)) {
+                    this.RequestNumberField = value;
+                    this.RaisePropertyChanged("RequestNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> TerminalID {
+            get {
+                return this.TerminalIDField;
+            }
+            set {
+                if ((this.TerminalIDField.Equals(value) != true)) {
+                    this.TerminalIDField = value;
+                    this.RaisePropertyChanged("TerminalID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BasePagingResultOfArrayOfCartableValueaLASQhIl", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     public partial class BasePagingResultOfArrayOfCartableValueaLASQhIl : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1270,7 +1446,7 @@ namespace WebService.CartableService {
         private string ExceptionMessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<WebService.CartableService.CartableValue> ValueField;
+        private WebService.CartableService.CartableValue[] ValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1322,7 +1498,7 @@ namespace WebService.CartableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<WebService.CartableService.CartableValue> Value {
+        public WebService.CartableService.CartableValue[] Value {
             get {
                 return this.ValueField;
             }
@@ -1350,6 +1526,7 @@ namespace WebService.CartableService {
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfint))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WebService.CartableService.BaseResultOfboolean))]
     public partial class BaseResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1456,6 +1633,29 @@ namespace WebService.CartableService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
+    [System.SerializableAttribute()]
+    public partial class BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7 : WebService.CartableService.BaseResult {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.KeyValuePair<long, bool>[] ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.KeyValuePair<long, bool>[] Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResultOfboolean", Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL")]
     [System.SerializableAttribute()]
     public partial class BaseResultOfboolean : WebService.CartableService.BaseResult {
@@ -1482,367 +1682,34 @@ namespace WebService.CartableService {
     public interface ICartableService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/FindAllCartableRecord", ReplyAction="http://tempuri.org/ICartableService/FindAllCartableRecordResponse")]
-        WebService.CartableService.FindAllCartableRecordResponse FindAllCartableRecord(WebService.CartableService.FindAllCartableRecordRequest request);
+        WebService.CartableService.BasePagingResultOfArrayOfCartableValueaLASQhIl FindAllCartableRecord(WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl whereClause, long[] employeeIDList, bool isFollowup, bool fillRequestObject);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/InsertTask", ReplyAction="http://tempuri.org/ICartableService/InsertTaskResponse")]
-        WebService.CartableService.InsertTaskResponse InsertTask(WebService.CartableService.InsertTaskRequest request);
+        WebService.CartableService.BaseResultOfboolean InsertTask(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long requestID, long employeeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/UpdateTaskDuration", ReplyAction="http://tempuri.org/ICartableService/UpdateTaskDurationResponse")]
-        WebService.CartableService.UpdateTaskDurationResponse UpdateTaskDuration(WebService.CartableService.UpdateTaskDurationRequest request);
+        WebService.CartableService.BaseResultOfboolean UpdateTaskDuration(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long employeeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/SeenTaskInfo", ReplyAction="http://tempuri.org/ICartableService/SeenTaskInfoResponse")]
-        WebService.CartableService.SeenTaskInfoResponse SeenTaskInfo(WebService.CartableService.SeenTaskInfoRequest request);
+        WebService.CartableService.BaseResultOfboolean SeenTaskInfo(WebService.CartableService.BaseInputOflong taskID, long employeeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/ForwardTask", ReplyAction="http://tempuri.org/ICartableService/ForwardTaskResponse")]
-        WebService.CartableService.ForwardTaskResponse ForwardTask(WebService.CartableService.ForwardTaskRequest request);
+        WebService.CartableService.BaseResultOfboolean ForwardTask(WebService.CartableService.BaseInputOfCartableValueaLASQhIl task);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/InsertRequest", ReplyAction="http://tempuri.org/ICartableService/InsertRequestResponse")]
-        WebService.CartableService.InsertRequestResponse InsertRequest(WebService.CartableService.InsertRequestRequest request);
+        WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7 InsertRequest(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request, WebService.CartableService.CartableType cartableType, long employeeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/UpdateRequest", ReplyAction="http://tempuri.org/ICartableService/UpdateRequestResponse")]
-        WebService.CartableService.UpdateRequestResponse UpdateRequest(WebService.CartableService.UpdateRequestRequest request);
+        WebService.CartableService.BaseResultOfboolean UpdateRequest(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request, long employeeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/DeleteRequest", ReplyAction="http://tempuri.org/ICartableService/DeleteRequestResponse")]
-        WebService.CartableService.DeleteRequestResponse DeleteRequest(WebService.CartableService.DeleteRequestRequest request);
+        WebService.CartableService.BaseResultOfboolean DeleteRequest(WebService.CartableService.BaseInputOflong requestID, long employeeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/CheckConfirmRequest", ReplyAction="http://tempuri.org/ICartableService/CheckConfirmRequestResponse")]
-        WebService.CartableService.CheckConfirmRequestResponse CheckConfirmRequest(WebService.CartableService.CheckConfirmRequestRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="FindAllCartableRecord", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class FindAllCartableRecordRequest {
+        WebService.CartableService.BaseResultOfint CheckConfirmRequest(WebService.CartableService.BaseInputOflong requestID);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl whereClause;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public System.Collections.Generic.List<long> employeeIDList;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public bool isFollowup;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
-        public bool fillRequestObject;
-        
-        public FindAllCartableRecordRequest() {
-        }
-        
-        public FindAllCartableRecordRequest(WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl whereClause, System.Collections.Generic.List<long> employeeIDList, bool isFollowup, bool fillRequestObject) {
-            this.whereClause = whereClause;
-            this.employeeIDList = employeeIDList;
-            this.isFollowup = isFollowup;
-            this.fillRequestObject = fillRequestObject;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="FindAllCartableRecordResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class FindAllCartableRecordResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BasePagingResultOfArrayOfCartableValueaLASQhIl FindAllCartableRecordResult;
-        
-        public FindAllCartableRecordResponse() {
-        }
-        
-        public FindAllCartableRecordResponse(WebService.CartableService.BasePagingResultOfArrayOfCartableValueaLASQhIl FindAllCartableRecordResult) {
-            this.FindAllCartableRecordResult = FindAllCartableRecordResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertTask", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class InsertTaskRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOfCartableGtasGmS9 task;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public long requestID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public long employeeID;
-        
-        public InsertTaskRequest() {
-        }
-        
-        public InsertTaskRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long requestID, long employeeID) {
-            this.task = task;
-            this.requestID = requestID;
-            this.employeeID = employeeID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertTaskResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class InsertTaskResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfboolean InsertTaskResult;
-        
-        public InsertTaskResponse() {
-        }
-        
-        public InsertTaskResponse(WebService.CartableService.BaseResultOfboolean InsertTaskResult) {
-            this.InsertTaskResult = InsertTaskResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateTaskDuration", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class UpdateTaskDurationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOfCartableGtasGmS9 task;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public long employeeID;
-        
-        public UpdateTaskDurationRequest() {
-        }
-        
-        public UpdateTaskDurationRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long employeeID) {
-            this.task = task;
-            this.employeeID = employeeID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateTaskDurationResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class UpdateTaskDurationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfboolean UpdateTaskDurationResult;
-        
-        public UpdateTaskDurationResponse() {
-        }
-        
-        public UpdateTaskDurationResponse(WebService.CartableService.BaseResultOfboolean UpdateTaskDurationResult) {
-            this.UpdateTaskDurationResult = UpdateTaskDurationResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SeenTaskInfo", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class SeenTaskInfoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOflong taskID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public long employeeID;
-        
-        public SeenTaskInfoRequest() {
-        }
-        
-        public SeenTaskInfoRequest(WebService.CartableService.BaseInputOflong taskID, long employeeID) {
-            this.taskID = taskID;
-            this.employeeID = employeeID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="SeenTaskInfoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class SeenTaskInfoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfboolean SeenTaskInfoResult;
-        
-        public SeenTaskInfoResponse() {
-        }
-        
-        public SeenTaskInfoResponse(WebService.CartableService.BaseResultOfboolean SeenTaskInfoResult) {
-            this.SeenTaskInfoResult = SeenTaskInfoResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ForwardTask", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class ForwardTaskRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOfCartableGtasGmS9 task;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public long requestID;
-        
-        public ForwardTaskRequest() {
-        }
-        
-        public ForwardTaskRequest(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long requestID) {
-            this.task = task;
-            this.requestID = requestID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="ForwardTaskResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class ForwardTaskResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfboolean ForwardTaskResult;
-        
-        public ForwardTaskResponse() {
-        }
-        
-        public ForwardTaskResponse(WebService.CartableService.BaseResultOfboolean ForwardTaskResult) {
-            this.ForwardTaskResult = ForwardTaskResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertRequest", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class InsertRequestRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public WebService.CartableService.CartableType cartableType;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public long employeeID;
-        
-        public InsertRequestRequest() {
-        }
-        
-        public InsertRequestRequest(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request, WebService.CartableService.CartableType cartableType, long employeeID) {
-            this.request = request;
-            this.cartableType = cartableType;
-            this.employeeID = employeeID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertRequestResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class InsertRequestResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7 InsertRequestResult;
-        
-        public InsertRequestResponse() {
-        }
-        
-        public InsertRequestResponse(WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7 InsertRequestResult) {
-            this.InsertRequestResult = InsertRequestResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateRequest", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class UpdateRequestRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public long employeeID;
-        
-        public UpdateRequestRequest() {
-        }
-        
-        public UpdateRequestRequest(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request, long employeeID) {
-            this.request = request;
-            this.employeeID = employeeID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateRequestResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class UpdateRequestResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfboolean UpdateRequestResult;
-        
-        public UpdateRequestResponse() {
-        }
-        
-        public UpdateRequestResponse(WebService.CartableService.BaseResultOfboolean UpdateRequestResult) {
-            this.UpdateRequestResult = UpdateRequestResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteRequest", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class DeleteRequestRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOflong requestID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
-        public long employeeID;
-        
-        public DeleteRequestRequest() {
-        }
-        
-        public DeleteRequestRequest(WebService.CartableService.BaseInputOflong requestID, long employeeID) {
-            this.requestID = requestID;
-            this.employeeID = employeeID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="DeleteRequestResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class DeleteRequestResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfboolean DeleteRequestResult;
-        
-        public DeleteRequestResponse() {
-        }
-        
-        public DeleteRequestResponse(WebService.CartableService.BaseResultOfboolean DeleteRequestResult) {
-            this.DeleteRequestResult = DeleteRequestResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CheckConfirmRequest", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class CheckConfirmRequestRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseInputOflong requestID;
-        
-        public CheckConfirmRequestRequest() {
-        }
-        
-        public CheckConfirmRequestRequest(WebService.CartableService.BaseInputOflong requestID) {
-            this.requestID = requestID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CheckConfirmRequestResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
-    public partial class CheckConfirmRequestResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
-        public WebService.CartableService.BaseResultOfint CheckConfirmRequestResult;
-        
-        public CheckConfirmRequestResponse() {
-        }
-        
-        public CheckConfirmRequestResponse(WebService.CartableService.BaseResultOfint CheckConfirmRequestResult) {
-            this.CheckConfirmRequestResult = CheckConfirmRequestResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICartableService/UpdateTaskState", ReplyAction="http://tempuri.org/ICartableService/UpdateTaskStateResponse")]
+        WebService.CartableService.BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7 UpdateTaskState(WebService.CartableService.BaseInputOfArrayOfCartableValueaLASQhIl taskIDList, long employeeID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1872,40 +1739,44 @@ namespace WebService.CartableService {
                 base(binding, remoteAddress) {
         }
         
-        public WebService.CartableService.FindAllCartableRecordResponse FindAllCartableRecord(WebService.CartableService.FindAllCartableRecordRequest request) {
-            return base.Channel.FindAllCartableRecord(request);
+        public WebService.CartableService.BasePagingResultOfArrayOfCartableValueaLASQhIl FindAllCartableRecord(WebService.CartableService.BasePagingInputOfCartableValueaLASQhIl whereClause, long[] employeeIDList, bool isFollowup, bool fillRequestObject) {
+            return base.Channel.FindAllCartableRecord(whereClause, employeeIDList, isFollowup, fillRequestObject);
         }
         
-        public WebService.CartableService.InsertTaskResponse InsertTask(WebService.CartableService.InsertTaskRequest request) {
-            return base.Channel.InsertTask(request);
+        public WebService.CartableService.BaseResultOfboolean InsertTask(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long requestID, long employeeID) {
+            return base.Channel.InsertTask(task, requestID, employeeID);
         }
         
-        public WebService.CartableService.UpdateTaskDurationResponse UpdateTaskDuration(WebService.CartableService.UpdateTaskDurationRequest request) {
-            return base.Channel.UpdateTaskDuration(request);
+        public WebService.CartableService.BaseResultOfboolean UpdateTaskDuration(WebService.CartableService.BaseInputOfCartableGtasGmS9 task, long employeeID) {
+            return base.Channel.UpdateTaskDuration(task, employeeID);
         }
         
-        public WebService.CartableService.SeenTaskInfoResponse SeenTaskInfo(WebService.CartableService.SeenTaskInfoRequest request) {
-            return base.Channel.SeenTaskInfo(request);
+        public WebService.CartableService.BaseResultOfboolean SeenTaskInfo(WebService.CartableService.BaseInputOflong taskID, long employeeID) {
+            return base.Channel.SeenTaskInfo(taskID, employeeID);
         }
         
-        public WebService.CartableService.ForwardTaskResponse ForwardTask(WebService.CartableService.ForwardTaskRequest request) {
-            return base.Channel.ForwardTask(request);
+        public WebService.CartableService.BaseResultOfboolean ForwardTask(WebService.CartableService.BaseInputOfCartableValueaLASQhIl task) {
+            return base.Channel.ForwardTask(task);
         }
         
-        public WebService.CartableService.InsertRequestResponse InsertRequest(WebService.CartableService.InsertRequestRequest request) {
-            return base.Channel.InsertRequest(request);
+        public WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7 InsertRequest(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request, WebService.CartableService.CartableType cartableType, long employeeID) {
+            return base.Channel.InsertRequest(request, cartableType, employeeID);
         }
         
-        public WebService.CartableService.UpdateRequestResponse UpdateRequest(WebService.CartableService.UpdateRequestRequest request) {
-            return base.Channel.UpdateRequest(request);
+        public WebService.CartableService.BaseResultOfboolean UpdateRequest(WebService.CartableService.BaseInputOfRequestWorkflowGtasGmS9 request, long employeeID) {
+            return base.Channel.UpdateRequest(request, employeeID);
         }
         
-        public WebService.CartableService.DeleteRequestResponse DeleteRequest(WebService.CartableService.DeleteRequestRequest request) {
-            return base.Channel.DeleteRequest(request);
+        public WebService.CartableService.BaseResultOfboolean DeleteRequest(WebService.CartableService.BaseInputOflong requestID, long employeeID) {
+            return base.Channel.DeleteRequest(requestID, employeeID);
         }
         
-        public WebService.CartableService.CheckConfirmRequestResponse CheckConfirmRequest(WebService.CartableService.CheckConfirmRequestRequest request) {
-            return base.Channel.CheckConfirmRequest(request);
+        public WebService.CartableService.BaseResultOfint CheckConfirmRequest(WebService.CartableService.BaseInputOflong requestID) {
+            return base.Channel.CheckConfirmRequest(requestID);
+        }
+        
+        public WebService.CartableService.BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7 UpdateTaskState(WebService.CartableService.BaseInputOfArrayOfCartableValueaLASQhIl taskIDList, long employeeID) {
+            return base.Channel.UpdateTaskState(taskIDList, employeeID);
         }
     }
 }

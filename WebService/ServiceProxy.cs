@@ -21,60 +21,51 @@ namespace WebService
         {
             var serviceClient = new CartableServiceClient();
 
-            var taskRequest = new InsertTaskRequest
+            var taskRequest = new BaseInputOfCartableGtasGmS9
             {
-                employeeID = employId,
-                requestID = requestId,
-                task = new BaseInputOfCartableGtasGmS9
+                Value = new Cartable
                 {
-                    Value = new Cartable
-                    {
-                        CurrentUserID = currentUserId,
-                        TaskID = taskId,
-                        FlowID = flowId,
-                        SenderID = senderID,
-                        Status = 1
-                    }
+                    CurrentUserID = currentUserId,
+                    TaskID = taskId,
+                    FlowID = flowId,
+                    SenderID = senderID,
+                    Status = 1
                 }
             };
-            var result = serviceClient.InsertTask(taskRequest);
+            var result = serviceClient.InsertTask(taskRequest, 24, employId);
         }
 
         public int CheckConfirm(long requestId)
         {
             CartableServiceClient serviceClient = new CartableServiceClient();
-            var result = serviceClient.CheckConfirmRequest(new CheckConfirmRequestRequest
+            var result = serviceClient.CheckConfirmRequest(new BaseInputOflong
             {
-                requestID = new BaseInputOflong { Value = requestId }
+                Value = requestId
             });
 
-            return result.CheckConfirmRequestResult.Value;
+            return result.Value;
         }
 
         public void ForwardService(
             long id,
             long currentUserId,
-            long? flowId,
-            long? taskId,
+            long flowId,
+            long taskId,
             string taskDecription,
             long requestId
             )
         {
             CartableServiceClient serviceClient = new CartableServiceClient();
-            var result = serviceClient.ForwardTask(new ForwardTaskRequest
+            var result = serviceClient.ForwardTask(new BaseInputOfCartableValueaLASQhIl
             {
-                task = new BaseInputOfCartableGtasGmS9
+                Value = new CartableValue
                 {
-                    Value = new Cartable
-                    {
-                        ID = requestId,
-                        CurrentUserID = currentUserId,
-                        FlowID = flowId,
-                        TaskID = taskId,
-                        ActionName = taskDecription
-                    }
-                },
-                requestID = requestId
+                    ID = requestId,
+                    CurrentUserID = currentUserId,
+                    FlowID = flowId,
+                    TaskID = taskId,
+                    ActionName = taskDecription
+                }
             });
             // 1,24,25,43,44
         }

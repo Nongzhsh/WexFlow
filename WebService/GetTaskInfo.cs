@@ -9,7 +9,7 @@ namespace WebService
 {
     public static class GetTaskInfo
     {
-        public static long? GetTaskId(string taskName)
+        public static long GetTaskId(string taskName)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("C:\\Wexflow\\Workflows\\Cancelation.xml");
@@ -21,7 +21,7 @@ namespace WebService
                     return long.Parse(node.Attributes[0].Value);
                 }
             }
-            return null;
+            return 0;
         }
 
         public static string GetTaskDescriotion(string taskName)

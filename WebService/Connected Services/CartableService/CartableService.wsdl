@@ -68,6 +68,12 @@
   <wsdl:message name="ICartableService_CheckConfirmRequest_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckConfirmRequestResponse" />
   </wsdl:message>
+  <wsdl:message name="ICartableService_UpdateTaskState_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskState" />
+  </wsdl:message>
+  <wsdl:message name="ICartableService_UpdateTaskState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskStateResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICartableService">
     <wsdl:operation name="FindAllCartableRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/ICartableService/FindAllCartableRecord" message="tns:ICartableService_FindAllCartableRecord_InputMessage" />
@@ -104,6 +110,10 @@
     <wsdl:operation name="CheckConfirmRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ICartableService/CheckConfirmRequest" message="tns:ICartableService_CheckConfirmRequest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICartableService/CheckConfirmRequestResponse" message="tns:ICartableService_CheckConfirmRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskState">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICartableService/UpdateTaskState" message="tns:ICartableService_UpdateTaskState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICartableService/UpdateTaskStateResponse" message="tns:ICartableService_UpdateTaskState_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICartableService" type="tns:ICartableService">
@@ -182,6 +192,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckConfirmRequest">
       <soap:operation soapAction="http://tempuri.org/ICartableService/CheckConfirmRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskState">
+      <soap:operation soapAction="http://tempuri.org/ICartableService/UpdateTaskState" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

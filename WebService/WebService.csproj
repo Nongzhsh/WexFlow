@@ -44,13 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetTaskInfo.cs" />
-    <Compile Include="ServiceProxy.cs" />
     <Compile Include="Connected Services\CartableService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="GetTaskInfo.cs" />
+    <Compile Include="ServiceProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,33 +89,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\CartableService\CartableService.wsdl" />
-    <None Include="Connected Services\CartableService\WebService.CartableService.CheckConfirmRequestResponse.datasource">
+    <None Include="Connected Services\CartableService\WebService.CartableService.BasePagingResultOfArrayOfCartableValueaLASQhIl.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.DeleteRequestResponse.datasource">
+    <None Include="Connected Services\CartableService\WebService.CartableService.BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.FindAllCartableRecordResponse.datasource">
+    <None Include="Connected Services\CartableService\WebService.CartableService.BaseResultOfboolean.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.ForwardTaskResponse.datasource">
+    <None Include="Connected Services\CartableService\WebService.CartableService.BaseResultOfint.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.InsertRequestResponse.datasource">
+    <None Include="Connected Services\CartableService\WebService.CartableService.BaseResultOfKeyValuePairOflongstringR8RmUPp7.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.InsertTaskResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.SeenTaskInfoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.UpdateRequestResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\CartableService\WebService.CartableService.UpdateTaskDurationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\Contract\Contract.csproj">
+      <Project>{829C4D92-369E-4BE9-BC44-31BD098C2615}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\CartableService\" />
@@ -134,12 +128,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\src\Contract\Contract.csproj">
-      <Project>{829C4D92-369E-4BE9-BC44-31BD098C2615}</Project>
-      <Name>Contract</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

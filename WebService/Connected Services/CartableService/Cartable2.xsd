@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MMS.Model.Enum" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:simpleType name="CartableFlowStatus">
+  <xs:import schemaLocation="http://172.16.11.82:9007/MMS/Cartable?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="CartableFlowState">
     <xs:restriction base="xs:string">
+      <xs:enumeration value="Nothing" />
       <xs:enumeration value="Approve" />
       <xs:enumeration value="Reject" />
       <xs:enumeration value="Send" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="CartableFlowStatus" nillable="true" type="tns:CartableFlowStatus" />
+  <xs:element name="CartableFlowState" nillable="true" type="tns:CartableFlowState" />
   <xs:simpleType name="CartableOrderStatus">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Normal" />
       <xs:enumeration value="PreCrisis" />
       <xs:enumeration value="Crisis" />
-      <xs:enumeration value="Force" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="CartableOrderStatus" nillable="true" type="tns:CartableOrderStatus" />
   <xs:simpleType name="CartableStatus">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Viewed" />
-      <xs:enumeration value="Unseen" />
-      <xs:enumeration value="Done" />
-      <xs:enumeration value="End" />
-      <xs:enumeration value="Disabled" />
+      <xs:enumeration value="Viewed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unseen">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Done">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="End">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Disabled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="CartableStatus" nillable="true" type="tns:CartableStatus" />

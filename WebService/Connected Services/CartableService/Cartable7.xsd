@@ -23,6 +23,8 @@
           <xs:element minOccurs="0" name="ID" type="xs:long" />
           <xs:element minOccurs="0" name="LastModifyDate" type="xs:dateTime" />
           <xs:element minOccurs="0" name="ObjectID" type="xs:long" />
+          <xs:element minOccurs="0" name="OrderStatus" type="xs:int" />
+          <xs:element minOccurs="0" name="RejectReasonID" nillable="true" type="xs:int" />
           <xs:element minOccurs="0" name="SenderID" type="xs:long" />
           <xs:element minOccurs="0" name="Status" type="xs:int" />
           <xs:element minOccurs="0" name="TaskID" nillable="true" type="xs:long" />
@@ -49,8 +51,8 @@
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FileRequestID" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="InsertBy" type="xs:long" />
+      <xs:element minOccurs="0" name="IsForce" type="xs:boolean" />
       <xs:element minOccurs="0" name="RequestNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RequestStatus" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="TerminalID" nillable="true" type="xs:long" />
     </xs:sequence>
   </xs:complexType>

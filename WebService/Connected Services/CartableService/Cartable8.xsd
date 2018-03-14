@@ -105,6 +105,23 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseInputOflong" nillable="true" type="tns:BaseInputOflong" />
+  <xs:complexType name="BaseInputOfCartableValueaLASQhIl">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseInputOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CartableValue" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" minOccurs="0" name="Value" nillable="true" type="q5:CartableValue" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseInputOfCartableValueaLASQhIl" nillable="true" type="tns:BaseInputOfCartableValueaLASQhIl" />
   <xs:complexType name="BaseInputOfRequestWorkflowGtasGmS9">
     <xs:annotation>
       <xs:appinfo>
@@ -116,7 +133,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseInput">
         <xs:sequence>
-          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MMS.Model" minOccurs="0" name="Value" nillable="true" type="q5:RequestWorkflow" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MMS.Model" minOccurs="0" name="Value" nillable="true" type="q6:RequestWorkflow" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -136,7 +153,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseResult">
         <xs:sequence>
-          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="Value" type="q6:KeyValuePairOflongstring" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="Value" type="q7:KeyValuePairOflongstring" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -159,4 +176,41 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseResultOfint" nillable="true" type="tns:BaseResultOfint" />
+  <xs:complexType name="BaseInputOfArrayOfCartableValueaLASQhIl">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseInputOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCartableValue" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseInput">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MMS.BLL.PublicCartable" minOccurs="0" name="Value" nillable="true" type="q8:ArrayOfCartableValue" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseInputOfArrayOfCartableValueaLASQhIl" nillable="true" type="tns:BaseInputOfArrayOfCartableValueaLASQhIl" />
+  <xs:complexType name="BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BaseResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/MMS.BLL" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfKeyValuePairOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+            <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="Value" nillable="true" type="q9:ArrayOfKeyValuePairOflongboolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7" nillable="true" type="tns:BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7" />
 </xs:schema>

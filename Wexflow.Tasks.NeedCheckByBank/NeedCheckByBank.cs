@@ -28,13 +28,14 @@ namespace Wexflow.Tasks.NeedCheckByBank
             var taskDescription = GetTaskInfo.GetTaskDescriotion(GetType().Name);
             var innerRequestModel = JsonConvert.DeserializeObject<InnerRequestModel>(model.TaskModel);
             var currentUserID = _userId;
-            new ServiceProxy().ForwardService(
-                innerRequestModel.RequestID,
+            new ServiceProxy().InsertTask(
                 currentUserID,
                 model.Id,
                 taskID,
                 taskDescription,
-                innerRequestModel.RequestID);
+                innerRequestModel.EmployeeID,
+                innerRequestModel.RequestID,
+                currentUserID);
             while (true)
             {
                 var serviceResult = new ServiceProxy().CheckConfirm(innerRequestModel.RequestID);

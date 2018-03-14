@@ -69,8 +69,7 @@
   <xs:element name="ForwardTask">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="task" nillable="true" type="q10:BaseInputOfCartableGtasGmS9" />
-        <xs:element minOccurs="0" name="requestID" type="xs:long" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="task" nillable="true" type="q10:BaseInputOfCartableValueaLASQhIl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -138,6 +137,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="CheckConfirmRequestResult" nillable="true" type="q20:BaseResultOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="taskIDList" nillable="true" type="q21:BaseInputOfArrayOfCartableValueaLASQhIl" />
+        <xs:element minOccurs="0" name="employeeID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MMS.BLL" minOccurs="0" name="UpdateTaskStateResult" nillable="true" type="q22:BaseResultOfArrayOfKeyValuePairOflongbooleanR8RmUPp7" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
