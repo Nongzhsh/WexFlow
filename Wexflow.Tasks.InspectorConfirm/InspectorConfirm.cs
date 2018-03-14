@@ -41,7 +41,7 @@ namespace Wexflow.Tasks.InspectorConfirm
                 if (serviceResult == 1)
                 {
                     return new TaskStatus(Status.Success, true);
-                }
+                }//
                 else if (serviceResult == 0)
                 {
                     return new TaskStatus(Status.Error, false);
